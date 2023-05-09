@@ -1,0 +1,23 @@
+{
+  "name": "com.quatronic.jedlixplugin",
+  "version": "0.1.0",
+  "description": "",
+  "cordova": {
+    "id": "com.quatronic.jedlixplugin",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/quatronic/JedlixPlugin"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "F. Grooten",
+  "license": "ISC"
+}
