@@ -6,12 +6,16 @@
     </js-module>
         <platform name="ios">
         <config-file parent="/*" target="config.xml">
-            <preference name="SwiftVersion" value="5.6"/>
+            <preference name="SwiftVersion" value="5"/>
             <feature name="JedlixPlugin">
                 <param name="ios-package" value="JedlixPlugin" />
             </feature>
         </config-file>
         <framework src="src/ios/JedlixSDK.framework" embed="true" custom="true" />
         <source-file src="src/ios/JedlixPlugin.swift" />
+        <source-file src="src/ios/Authentication.swift" />
+        <source-file src="src/ios/DefaultAuthentication.swift" />
+        <source-file src="src/ios/User.swift" />
+
     </platform>
 </plugin>
