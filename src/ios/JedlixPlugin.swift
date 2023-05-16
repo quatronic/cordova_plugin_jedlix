@@ -1,7 +1,7 @@
 import SwiftUI
 import JedlixSDK
 
-class MyPlugin: CDVPlugin {
+class JedlixPlugin: CDVPlugin {
     @objc(coolMethod:)
     func coolMethod(command: CDVInvokedUrlCommand) {
         let vc = ConnectView.create()
