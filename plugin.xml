@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.jedlix.myplugin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>MyPlugin</name>
-    <js-module name="MyPlugin" src="www/MyPlugin.js">
-        <clobbers target="cordova.plugins.MyPlugin" />
+<plugin id="com.quatronic.jedlixplugin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>JedlixPlugin</name>
+    <js-module name="JedlixPlugin" src="www/JedlixPlugin.js">
+        <clobbers target="cordova.plugins.JedlixPlugin" />
     </js-module>
         <platform name="ios">
         <config-file parent="/*" target="config.xml">
-            <feature name="MyPlugin">
-                <param name="ios-package" value="MyPlugin" />
+            <feature name="JedlixPlugin">
+                <param name="ios-package" value="JedlixPlugin" />
             </feature>
         </config-file>
         <framework src="src/ios/JedlixSDK.framework" embed="true" custom="true" />
-        <source-file src="src/ios/MyPlugin.swift" />
+        <source-file src="src/ios/JedlixPlugin.swift" />
     </platform>
 </plugin>
