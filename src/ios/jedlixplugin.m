@@ -15,7 +15,8 @@
 {
 	// F. Grooten: this line below is the ONLY line added by Tomas. The rest is default boiler plate cordova plugin
     //[[NSNotificationCenter defaultCenter] postNotificationName:@"connect" object:self];
-	[[[UIApplication shared] keyWindow].rootViewController presentViewController:UIViewController() animated:YES completion:NULL];
+    	vc.view.backgroundColor = UIColor.greenColor;
+	[[[UIApplication sharedApplication] keyWindow].rootViewController presentViewController:vc animated:NO completion:NULL];
 	
     CDVPluginResult* pluginResult = nil;
     NSString* echo = [command.arguments objectAtIndex:0];
