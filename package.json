@@ -1,9 +1,9 @@
 {
-  "name": "com.jedlix.myplugin",
+  "name": "com.quatronic.JedlixPlugin",
   "version": "1.0.0",
   "description": "",
   "cordova": {
-    "id": "com.jedlix.myplugin",
+    "id": "com.quatronic.JedlixPlugin",
     "platforms": [
       "ios"
     ]
@@ -12,6 +12,6 @@
     "ecosystem:cordova",
     "cordova-ios"
   ],
-  "author": "",
+  "author": "F. Grooten",
   "license": "ISC"
 }
