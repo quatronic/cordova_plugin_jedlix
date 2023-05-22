@@ -7,7 +7,7 @@ class JedlixPlugin: CDVPlugin {
 
         let userid = command.arguments[0] as? String ?? ""
         let accesstoken = command.arguments[1] as? String ?? ""
-        let vehicleid = ""
+        let vehicleid = command.arguments[2] as? String ?? ""
 
         let vc = ConnectView.create(userId: userid, accessToken: accesstoken, vehicleId: vehicleid)
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
@@ -29,6 +29,6 @@ class JedlixPlugin: CDVPlugin {
          JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
          authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
         
-         return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, sessionType: .vehicle))
+         return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId))
      }
 }
