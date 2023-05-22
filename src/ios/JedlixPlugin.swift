@@ -5,9 +5,11 @@ class JedlixPlugin: CDVPlugin {
     @objc(coolMethod:)
     func coolMethod(command: CDVInvokedUrlCommand) {
 
-        let options = command.arguments[0];
+        let userid = command.arguments[0] as? String ?? ""
+        let accesstoken = command.arguments[1] as? String ?? ""
+        let vehicleid = ""
 
-        let vc = ConnectView.create(userId: options.userid, accessToken: options.accesstoken, vehicleId: options.vehicleid)
+        let vc = ConnectView.create(userId: userid, accessToken: accesstoken, vehicleId: vehicleid)
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
 
         let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
