@@ -4,6 +4,66 @@ plugins {
     id("org.jmailen.kotlinter") version "3.14.0"
 }
 
+android {
+    compileSdkVersion = 33
+    namespace="com.jedlix.sdk"
+
+    defaultConfig {
+        minSdk = 21
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFile("proguard-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+
+    dependencies {
+        val androidCoreVersion: String by project
+        val appCompatVersion: String by project
+        val materialVersion: String by project
+        val serializationVersion: String by project
+        val ktorVersion: String by project
+        val androidxActivityVersion: String by project
+        val androidxLifecycleVersion: String by project
+        val androidxBrowserVersion: String by project
+
+        implementation("androidx.core:core-ktx:$androidCoreVersion")
+        implementation("androidx.appcompat:appcompat:$appCompatVersion")
+        implementation("com.google.android.material:material:$materialVersion")
+
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
+
+        implementation("io.ktor:ktor-client-core:$ktorVersion")
+        implementation("io.ktor:ktor-client-android:$ktorVersion")
+        implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+        implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+        implementation("io.ktor:ktor-client-logging:$ktorVersion")
+
+        implementation("androidx.activity:activity-ktx:$androidxActivityVersion")
+        implementation("androidx.lifecycle:lifecycle-runtime-ktx:$androidxLifecycleVersion")
+        implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$androidxLifecycleVersion")
+        implementation("androidx.lifecycle:lifecycle-livedata-ktx:$androidxLifecycleVersion")
+        implementation("androidx.browser:browser:$androidxBrowserVersion")
+
+        testImplementation("junit:junit:4.13.2")
+        androidTestImplementation("androidx.test.ext:junit:1.1.5")
+        androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    }
+}
 buildscript {
     repositories {
         google()
