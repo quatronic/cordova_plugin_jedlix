@@ -5,13 +5,13 @@
   "cordova": {
     "id": "com.quatronic.JedlixPlugin",
     "platforms": [
-      "ios"
+      "ios", "android"
     ]
   },
   "keywords": [
     "ecosystem:cordova",
     "cordova-ios"
   ],
-  "author": "F. Grooten",
+  "author": "F. Grooten & R. Snijders",
   "license": "ISC"
 }

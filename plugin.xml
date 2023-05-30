@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="com.quatronic.jedlixplugin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>JedlixPlugin</name>
+
     <js-module name="JedlixPlugin" src="www/JedlixPlugin.js">
         <clobbers target="cordova.plugins.JedlixPlugin" />
     </js-module>
-        <platform name="ios">
+
+    <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <preference name="SwiftVersion" value="5"/>
             <feature name="JedlixPlugin">
@@ -16,6 +18,23 @@
         <source-file src="src/ios/Authentication.swift" />
         <source-file src="src/ios/DefaultAuthentication.swift" />
         <source-file src="src/ios/User.swift" />
+    </platform>
+
+    <platform name="android">
+        <config-file parent="/*" target="config.xml">
+            <preference name="GradlePluginVersion" value="8.0.0" />
+            <preference name="KotlinVersion" value="1.8.10" />
+            <preference name="GradlePluginKotlinEnabled" value="true" />
+            <feature name="JedlixPlugin">
+                <param name="android-package" value="JedlixPlugin" />
+            </feature>
+        </config-file>
+		<edit-config file="AndroidManifest.xml" target="/manifest/uses-sdk" mode="merge">
+			<uses-sdk android:minSdkVersion="31" android:maxSdkVersion="34" />
+		</edit-config>
+		<framework src="com.jedlix:sdk:1.5.0" custom="true" type="gradleReference"/>
+<source-file src="src/android/Authentication.kt" target-dir="src/com/jedlixplugin/cordova/plugin" />
+<source-file src="src/android/DefaultAuthentication.kt" target-dir="src/com/jedlixplugin/cordova/plugin" />
 
     </platform>
 </plugin>
