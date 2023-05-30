@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdkVersion = 33
     namespace="com.jedlix.sdk"
 
     defaultConfig {
