@@ -14,13 +14,13 @@ class JedlixPlugin : CordovaPlugin() {
             val userId = args.optString(0, "")
             val accessToken = args.optString(1, "")
             val vehicleId = args.optString(2, "")
-            
-            val intent = Intent(cordova.activity, ConnectSessionActivity::class.java)
+                                 
+            val intent = Intent(this, ConnectView::class.java)
             intent.putExtra("userId", userId)
             intent.putExtra("accessToken", accessToken)
             intent.putExtra("vehicleId", vehicleId)
             
-            cordova.activity?.startActivity(intent)
+            startActivity(intent)
             
             val result = PluginResult(PluginResult.Status.OK, "Test")
             callbackContext.sendPluginResult(result)
@@ -46,7 +46,7 @@ class ConnectView {
             JedlixSDK.configure(baseURL, apiKey, authentication)
             authentication.authenticate(accessToken, userId)
             
-            val intent = Intent(this, ConnectSessionActivity::class.java)
+            val intent = Intent(this, SomeActivity::class.java)
             intent.putExtra("userId", userId)
             intent.putExtra("vehicleId", vehicleId)
             
@@ -55,21 +55,21 @@ class ConnectView {
     }
 }
 
-class ConnectSessionActivity : AppCompatActivity() {
-
+class SomeActivity : AppCompatActivity() {
     private lateinit var userIdentifier: String
     private lateinit var vehicleIdentifier: String
-    
+     
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_connect_session)
-        
         userIdentifier = intent.getStringExtra("userId") ?: ""
         vehicleIdentifier = intent.getStringExtra("vehicleId") ?: ""
         
-        val rootView = ConnectSessionView(userIdentifier, vehicleIdentifier)
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, rootView)
-            .commit()
+        val connectSessionManager = registerConnectSessionManager { result ->
+            // continue when ConnectSessionActivity finishes
+        }
+        
+        connectSessionManager.startConnectSession(
+            userIdentifier,
+            ConnectSessionType.SelectedVehicle(vehicleIdentifier)
+        )
     }
 }
