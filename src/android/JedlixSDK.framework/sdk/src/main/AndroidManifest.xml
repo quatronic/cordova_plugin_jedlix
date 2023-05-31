@@ -6,6 +6,7 @@
 
     <application
         android:hardwareAccelerated="true">
+        android:name="android.support.multidex.MultiDexApplication" >
 
         <activity android:name=".activity.connectSession.ConnectSessionActivity"
             android:screenOrientation="fullSensor"
