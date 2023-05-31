@@ -4,9 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <application
-        android:hardwareAccelerated="true">
-        android:name="android.support.multidex.MultiDexApplication" >
+<application
+    android:name="android.support.multidex.MultiDexApplication"
+    android:hardwareAccelerated="true">
 
         <activity android:name=".activity.connectSession.ConnectSessionActivity"
             android:screenOrientation="fullSensor"
