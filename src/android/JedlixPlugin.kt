@@ -37,7 +37,7 @@ class ConnectView {
     companion object {
         @JvmStatic
         fun create(userId: String, accessToken: String, vehicleId: String): Intent {
-            val baseURL = "https://demo-smartcharging.jedlix.com"
+            val baseURL = "https://qa-nextenergy-smartcharging.jedlix.com"
             val apiKey: String? = null
             // val accessToken = "your_access_token"
             // val userId = "your_user_id"
