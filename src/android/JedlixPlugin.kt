@@ -15,10 +15,7 @@ class JedlixPlugin : CordovaPlugin() {
             val accessToken = args.optString(1, "")
             val vehicleId = args.optString(2, "")
                                  
-            val intent = Intent(this, ConnectView::class.java)
-            intent.putExtra("userId", userId)
-            intent.putExtra("accessToken", accessToken)
-            intent.putExtra("vehicleId", vehicleId)
+            val intent = ConnectView.create(userId, accessToken, vehicleId)
             
             startActivity(intent)
             
