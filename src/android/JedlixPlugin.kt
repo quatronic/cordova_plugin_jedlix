@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import org.apache.cordova.CordovaPlugin
 import org.apache.cordova.CallbackContext
+import org.apache.cordova.PluginResult
 import com.example.jedlixsdk.ConnectView
 import com.example.jedlixsdk.R
 import com.example.jedlixsdk.ui.ConnectSessionActivity
