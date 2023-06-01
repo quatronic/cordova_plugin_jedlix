@@ -7,7 +7,7 @@
     </js-module>
 
     <platform name="ios">
-        <config-file parent="/*" target="config.xml">
+        <config-file parent="/*" target="AndroidManifest.xml">
             <preference name="SwiftVersion" value="5"/>
             <feature name="JedlixPlugin">
                 <param name="ios-package" value="JedlixPlugin" />
