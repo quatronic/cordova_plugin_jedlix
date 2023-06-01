@@ -1,4 +1,4 @@
-package com.jedlixplugin.cordova.plugin.JedlixPlugin
+package com.quatronic.jedlixplugin.JedlixPlugin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
