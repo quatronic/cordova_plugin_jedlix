@@ -1,13 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="com.quatronic.jedlixplugin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>JedlixPlugin</name>
-
+	<engines>
+		<engine name="cordova" version=">=3.0.0"/>
+	</engines>
     <js-module name="JedlixPlugin" src="www/JedlixPlugin.js">
         <clobbers target="cordova.plugins.JedlixPlugin" />
     </js-module>
 
     <platform name="ios">
-        <config-file parent="/*" target="AndroidManifest.xml">
+        <config-file parent="/*" target="config.xml">
             <preference name="SwiftVersion" value="5"/>
             <feature name="JedlixPlugin">
                 <param name="ios-package" value="JedlixPlugin" />
@@ -21,12 +23,12 @@
     </platform>
 
     <platform name="android">
-        <config-file parent="/*" target="config.xml">
+        <config-file parent="/*" target="AndroidManifest.xml">
             <preference name="GradlePluginVersion" value="8.0.0" />
             <preference name="KotlinVersion" value="1.8.10" />
             <preference name="GradlePluginKotlinEnabled" value="true" />
             <feature name="JedlixPlugin">
-                <param name="android-package" value="JedlixPlugin" />
+                <param name="android-package" value="com.jedlixplugin.cordova.plugin.JedlixPlugin" />
             </feature>
 	</config-file>
 	<framework src="com.jedlix:sdk:1.5.0" />
