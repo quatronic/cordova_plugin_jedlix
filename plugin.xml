@@ -23,7 +23,7 @@
     </platform>
 
     <platform name="android">
-        <config-file parent="/*" target="config.xml">
+        <config-file parent="/*" target="res/xml/config.xml">
             <preference name="GradlePluginVersion" value="8.0.0" />
             <preference name="KotlinVersion" value="1.8.10" />
             <preference name="GradlePluginKotlinEnabled" value="true" />
