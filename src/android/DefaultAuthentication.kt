@@ -14,7 +14,7 @@
  *     limitations under the License.
  */
 
-package com.jedlix.sdk.example.authentication
+package com.quatronic.jedlixplugin
 
 import android.content.Context
 import android.content.SharedPreferences
