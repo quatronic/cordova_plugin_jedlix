@@ -14,7 +14,7 @@
  *     limitations under the License.
  */
 
-package com.jedlix.sdk.example.authentication
+package com.quatronic.jedlixplugin
 
 sealed interface Authentication : com.jedlix.sdk.networking.Authentication {
     val isAuthenticated: Boolean
