@@ -30,8 +30,8 @@
             </feature>
 	</config-file>
 	<framework src="com.jedlix:sdk:1.5.0" />
-	<source-file src="src/android/JedlixPlugin.kt" 		target-dir="src/com/jedlixplugin/cordova/plugin" />	    
-	<source-file src="src/android/Authentication.kt" 	target-dir="src/com/jedlixplugin/cordova/plugin" />
+	<source-file src="src/android/JedlixPlugin.kt" 	target-dir="src/com/jedlixplugin/cordova/plugin" />	    
+	<source-file src="src/android/Authentication.kt" target-dir="src/com/jedlixplugin/cordova/plugin" />
 	<source-file src="src/android/DefaultAuthentication.kt" target-dir="src/com/jedlixplugin/cordova/plugin" />
     </platform>
 </plugin>
