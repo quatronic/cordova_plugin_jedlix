@@ -1,4 +1,4 @@
-package com.quatronic.jedlixplugin.JedlixPlugin
+package com.quatronic.jedlixplugin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
