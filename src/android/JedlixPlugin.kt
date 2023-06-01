@@ -1,3 +1,5 @@
+package com.jedlixplugin.cordova.plugin.JedlixPlugin
+
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
 import android.content.Intent
