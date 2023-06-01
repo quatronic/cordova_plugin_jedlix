@@ -28,12 +28,12 @@
             <preference name="KotlinVersion" value="1.8.10" />
             <preference name="GradlePluginKotlinEnabled" value="true" />
 		<feature name="JedlixPlugin">
-			<param name="android-package" value="com.quatronic.cordova.plugin.JedlixPlugin"/>
+			<param name="android-package" value="com.quatronic.jedlixplugin.JedlixPlugin"/>
 		</feature>
 	</config-file>
 	<framework src="com.jedlix:sdk:1.5.0" />	    
-	<source-file src="src/android/Authentication.kt" target-dir="src/com/quatronic/cordova/plugin" />
-	<source-file src="src/android/DefaultAuthentication.kt" target-dir="src/com/quatronic/cordova/plugin" />
-	<source-file src="src/android/JedlixPlugin.kt" target-dir="src/com/quatronic/cordova/plugin" />
+	<source-file src="src/android/Authentication.kt" target-dir="src/com/quatronic/jedlixplugin" />
+	<source-file src="src/android/DefaultAuthentication.kt" target-dir="src/com/quatronic/jedlixplugin" />
+	<source-file src="src/android/JedlixPlugin.kt" target-dir="src/com/quatronic/jedlixplugin" />
     </platform>
 </plugin>
