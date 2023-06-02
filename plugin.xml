@@ -25,8 +25,9 @@
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <preference name="GradlePluginVersion" value="8.0.0" />
-            <preference name="KotlinVersion" value="1.8.10" />
             <preference name="GradlePluginKotlinEnabled" value="true" />
+	    <preference name="GradlePluginKotlinCodeStyle" value="official" />
+	    <preference name="GradlePluginKotlinVersion" value="1.8.10" />
 		<feature name="JedlixPlugin">
 			<param name="android-package" value="com.quatronic.jedlixplugin.JedlixPlugin"/>
 		</feature>
