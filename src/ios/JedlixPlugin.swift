@@ -30,6 +30,8 @@ class JedlixPlugin: CVDPlugin {
     }
 }
 
+//Define a class similar to the one below but for a charger connection instead
+
 
 @objc class ConnectView: NSObject {
      @objc static func create(userId: String, accessToken: String, vehicleId: String) -> UIViewController {
