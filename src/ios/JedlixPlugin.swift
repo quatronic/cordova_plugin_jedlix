@@ -17,6 +17,19 @@ class JedlixPlugin: CDVPlugin {
     }
 }
 
+class JedlixPlugin: CVDPlugin { 
+    @objc(chargerMethod:)
+    func chargerMethod(command: CDVInvokedUrlCommand) {
+        
+        let userid = command.arguments[0] as? String ?? ""
+        let accesstoken = command.arguments[1] as? String ?? ""
+        let charginglocationid = command.arguments[2] as? String ?? ""
+        let externalid = command.arguments[3] as? String ?? ""
+        
+        //charger specific code similar to the one in the previous class
+    }
+}
+
 
 @objc class ConnectView: NSObject {
      @objc static func create(userId: String, accessToken: String, vehicleId: String) -> UIViewController {
