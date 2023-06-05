@@ -40,7 +40,7 @@ struct OSAuthentication: Decodable {
     let issuccess: Bool
 }
 
-GetToken() async throws -> [OSAuthentication] {
+func GetToken() async throws -> [OSAuthentication] {
     let OSid = "e749f09e-491d-4ac2-9d4e-16f9ef700bbc"
     let url = URL(string: "https://energynextbv-dev.outsystemsenterprise.com/Jedlix_IS/rest/GetAccessToken/GetToken?AuthenticationId=\(OSid)")
     
