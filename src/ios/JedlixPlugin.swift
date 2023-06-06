@@ -53,7 +53,7 @@ func GetToken() async throws -> OSAuthentication {
 
 @objc class ConnectView: NSObject {
     @objc static func create(userId: String, vehicleId: String) -> UIViewController {
-        let baseURL = URL(string: "https://demo-smartcharging.jedlix.com")!
+        let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
         let apiKey: String? = nil
         
         Task {
