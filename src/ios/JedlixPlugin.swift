@@ -16,23 +16,23 @@ class JedlixPlugin: CDVPlugin {
     }
 }
 
-class JedlixPlugin: CVDPlugin { 
-    @objc(chargerMethod:)
-    func chargerMethod(command: CDVInvokedUrlCommand) {
+//class JedlixPlugin: CVDPlugin { 
+//    @objc(chargerMethod:)
+//    func chargerMethod(command: CDVInvokedUrlCommand) {
         
-        let userid = command.arguments[0] as? String ?? ""
-        let accesstoken = command.arguments[1] as? String ?? ""
-        let charginglocationid = command.arguments[2] as? String ?? ""
-        let externalid = command.arguments[3] as? String ?? ""
+//        let userid = command.arguments[0] as? String ?? ""
+//        let accesstoken = command.arguments[1] as? String ?? ""
+//        let charginglocationid = command.arguments[2] as? String ?? ""
+//        let externalid = command.arguments[3] as? String ?? ""
         
         //charger specific code similar to the one in the previous class
-    }
-}
+//    }
+//}
 
-@objc class ChargerConnectView: NSObject {
-    @objc static func create(userid: String, accessToken: String, chargerid: String, charginglocationid: String)
+//@objc class ChargerConnectView: NSObject {
+ //   @objc static func create(userid: String, accessToken: String, chargerid: String, charginglocationid: String)
     
-}
+//}
 //Define a class similar to the one below but for a charger connection instead
 
 struct OSAuthentication: Decodable {
