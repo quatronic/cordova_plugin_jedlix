@@ -1,5 +1,6 @@
 import SwiftUI
 import JedlixSDK
+import Task
 
 class JedlixPlugin: CDVPlugin {
     @objc(coolMethod:)
