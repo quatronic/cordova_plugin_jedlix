@@ -51,22 +51,24 @@ func GetToken() async throws -> OSAuthentication {
     return decoded
 }
 
-
-
-
 @objc class ConnectView: NSObject {
     @objc static func create(userId: String, vehicleId: String) -> UIViewController {
         let baseURL = URL(string: "https://demo-smartcharging.jedlix.com")!
         let apiKey: String? = nil
-        let accessToken = try? GetToken() // Await the GetToken function call
         
-        let authentication = DefaultAuthentication()
-        JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
-        
-        if let accessToken = accessToken {
-            authentication.authenticate(accessToken: accessToken.accesstoken, userIdentifier: userId)
+        Task {
+            do {
+                let accessToken = try await GetToken()
+                
+                let authentication = DefaultAuthentication()
+                JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
+                authentication.authenticate(accessToken: accessToken.accesstoken, userIdentifier: userId)
+            } catch {
+                print("Error fetching access token: \(error)")
+            }
         }
         
         return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId))
     }
 }
+
