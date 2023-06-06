@@ -54,7 +54,7 @@ func GetToken() async throws -> OSAuthentication {
 
 
 @objc class ConnectView: NSObject {
-    @objc static func create(userId: String, vehicleId: String) -> UIViewController {
+    @objc static async func create(userId: String, vehicleId: String) -> UIViewController {
         let baseURL = URL(string: "https://demo-smartcharging.jedlix.com")!
         let apiKey: String? = nil
         let accessToken = try? await GetToken() // Await the GetToken function call
