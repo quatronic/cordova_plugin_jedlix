@@ -44,7 +44,7 @@ func GetToken() async throws -> [OSAuthentication] {
     let OSid = "e749f09e-491d-4ac2-9d4e-16f9ef700bbc"
     let url = URL(string: "https://energynextbv-dev.outsystemsenterprise.com/Jedlix_IS/rest/GetAccessToken/GetToken?AuthenticationId=\(OSid)")
     
-    let (data, _) = try await URLSession.shared.data(form: url)
+    let (data, _) = try await URLSession.shared.data(from: url)
     
     let decoded = JSONDecoder().decode(OSAuthentication.self, from: data)
     
@@ -64,7 +64,7 @@ func GetToken() async throws -> [OSAuthentication] {
          let accesstoken = TokenResults[0]
          let authentication = DefaultAuthentication()
          JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
-         authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
+         authentication.authenticate(accessToken: accesstoken, userIdentifier: userId)
         
          return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId))
      }
