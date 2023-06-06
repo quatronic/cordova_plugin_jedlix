@@ -40,21 +40,40 @@ struct OSAuthentication: Decodable {
     let issuccess: Bool
 }
 
-func GetToken() async throws -> OSAuthentication {
+func GetToken(completion: @escaping (OSAuthentication?, Error?) -> Void) {
     let OSid = "e749f09e-491d-4ac2-9d4e-16f9ef700bbc"
     let url = URL(string: "https://energynextbv-dev.outsystemsenterprise.com/Jedlix_IS/rest/GetAccessToken/GetToken?AuthenticationId=\(OSid)")!
     
-    let (data, _) = try await URLSession.shared.data(from: url)
     
-    let decoded = try JSONDecoder().decode(OSAuthentication.self, from: data)
+URLSession.shared.dataTask(with: url) { data, _, error in
+    if let error = error {
+        // Handle the error case
+        completion(nil, error)
+        return
+    }
     
-    return decoded
+    guard let data = data else {
+        // Handle the case where no data is received
+        let error = NSError(domain: "YourDomain", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])
+        completion(nil, error)
+        return
+    }
+    
+    // Process the received data
+    do {
+        let decoded = try JSONDecoder().decode(OSAuthentication.self, from: data)
+        completion(decoded, nil)
+    } catch {
+        // Handle the case where decoding fails
+        completion(nil, error)
+    }
+}.resume()
 }
 
 
 
 @objc class ConnectView: NSObject {
-    @objc static async func create(userId: String, vehicleId: String) -> UIViewController {
+    @objc static func create(userId: String, vehicleId: String) -> UIViewController {
         let baseURL = URL(string: "https://demo-smartcharging.jedlix.com")!
         let apiKey: String? = nil
         let accessToken = try? await GetToken() // Await the GetToken function call
