@@ -15,6 +15,7 @@ class JedlixPlugin: CDVPlugin {
         let resultvehicle = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
         self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)
     }
+
     @objc(chargerMethod:)
     func chargerMethod(command: CDVInvokedUrlCommand) {
 
@@ -44,6 +45,7 @@ class JedlixPlugin: CDVPlugin {
         
          return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId))
      }
+     
     @objc static func createCharger(userId: String, accessToken: String, chargingLocationId: String) -> UIViewController {
          let baseURL = URL(string: "https://demo-smartcharging.jedlix.com")!
          let apiKey: String? = nil    
