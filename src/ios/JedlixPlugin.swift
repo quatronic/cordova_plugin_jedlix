@@ -29,6 +29,23 @@ class JedlixPlugin: CDVPlugin {
         let resultcharger = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
         self.commandDelegate.send(resultcharger, callbackId: command.callbackId)
     }
+
+    struct OSAuthentication: Decodable {
+    let accesstoken: String
+    let issuccess: Bool
+}
+
+    func GetToken() async throws -> OSAuthentication {
+        let OSid = "e749f09e-491d-4ac2-9d4e-16f9ef700bbc"
+        let url = URL(string: "https://energynextbv-dev.outsystemsenterprise.com/Jedlix_IS/rest/GetAccessToken/GetToken?AuthenticationId=\(OSid)")!
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        let decoded = try JSONDecoder().decode(OSAuthentication.self, from: data)
+        
+        return decoded
+    }
+
 }
 
 
@@ -45,14 +62,24 @@ class JedlixPlugin: CDVPlugin {
         
          return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId))
      }
-     
-    @objc static func createCharger(userId: String, accessToken: String, chargingLocationId: String) -> UIViewController {
+
+    @objc static func createCharger(userId: String, chargingLocationId: String) -> UIViewController {
          let baseURL = URL(string: "https://demo-smartcharging.jedlix.com")!
          let apiKey: String? = nil    
          let authentication = DefaultAuthentication()
          let type = ConnectSessionType.charger(chargingLocationId: chargingLocationId)
-         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
-         authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
+
+        Task {
+            do {
+                let accessToken = try await GetToken()
+                
+                let authentication = DefaultAuthentication()
+                JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
+                authentication.authenticate(accessToken: accessToken.accesstoken, userIdentifier: userId)
+            } catch {
+                print("Error fetching access token: \(error)")
+            }
+        }
         
          return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, sessionType: type))
     }
