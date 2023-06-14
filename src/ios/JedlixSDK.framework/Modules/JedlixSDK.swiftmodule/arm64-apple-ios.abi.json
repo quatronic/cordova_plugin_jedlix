@@ -261,7 +261,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(userIdentifier:sessionType:)",
+            "printedName": "init(userIdentifier:sessionType:onConnectionFinished:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -280,11 +280,30 @@
                 "name": "ConnectSessionType",
                 "printedName": "JedlixSDK.ConnectSessionType",
                 "usr": "s:9JedlixSDK18ConnectSessionTypeO"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(JedlixSDK.ConnectSessionResult) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ConnectSessionResult",
+                    "printedName": "JedlixSDK.ConnectSessionResult",
+                    "usr": "s:9JedlixSDK20ConnectSessionResultO"
+                  }
+                ],
+                "hasDefaultArg": true
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:9JedlixSDK18ConnectSessionViewV14userIdentifier11sessionTypeACSS_AA0cdI0Otcfc",
-            "mangledName": "$s9JedlixSDK18ConnectSessionViewV14userIdentifier11sessionTypeACSS_AA0cdI0Otcfc",
+            "usr": "s:9JedlixSDK18ConnectSessionViewV14userIdentifier11sessionType20onConnectionFinishedACSS_AA0cdI0OyAA0cD6ResultOctcfc",
+            "mangledName": "$s9JedlixSDK18ConnectSessionViewV14userIdentifier11sessionType20onConnectionFinishedACSS_AA0cdI0OyAA0cD6ResultOctcfc",
             "moduleName": "JedlixSDK",
             "declAttributes": [
               "Custom",
@@ -296,7 +315,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(userIdentifier:vehicleIdentifier:)",
+            "printedName": "init(userIdentifier:vehicleIdentifier:onConnectionFinished:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -315,11 +334,30 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(JedlixSDK.ConnectSessionResult) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ConnectSessionResult",
+                    "printedName": "JedlixSDK.ConnectSessionResult",
+                    "usr": "s:9JedlixSDK20ConnectSessionResultO"
+                  }
+                ],
+                "hasDefaultArg": true
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:9JedlixSDK18ConnectSessionViewV14userIdentifier07vehicleG0ACSS_SStcfc",
-            "mangledName": "$s9JedlixSDK18ConnectSessionViewV14userIdentifier07vehicleG0ACSS_SStcfc",
+            "usr": "s:9JedlixSDK18ConnectSessionViewV14userIdentifier07vehicleG020onConnectionFinishedACSS_SSyAA0cD6ResultOctcfc",
+            "mangledName": "$s9JedlixSDK18ConnectSessionViewV14userIdentifier07vehicleG020onConnectionFinishedACSS_SSyAA0cD6ResultOctcfc",
             "moduleName": "JedlixSDK",
             "declAttributes": [
               "Custom",
@@ -331,7 +369,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(userIdentifier:sessionIdentifier:)",
+            "printedName": "init(userIdentifier:sessionIdentifier:onConnectionFinished:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -350,11 +388,30 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(JedlixSDK.ConnectSessionResult) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ConnectSessionResult",
+                    "printedName": "JedlixSDK.ConnectSessionResult",
+                    "usr": "s:9JedlixSDK20ConnectSessionResultO"
+                  }
+                ],
+                "hasDefaultArg": true
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:9JedlixSDK18ConnectSessionViewV14userIdentifier07sessionG0ACSS_SStcfc",
-            "mangledName": "$s9JedlixSDK18ConnectSessionViewV14userIdentifier07sessionG0ACSS_SStcfc",
+            "usr": "s:9JedlixSDK18ConnectSessionViewV14userIdentifier07sessionG020onConnectionFinishedACSS_SSyAA0cD6ResultOctcfc",
+            "mangledName": "$s9JedlixSDK18ConnectSessionViewV14userIdentifier07sessionG020onConnectionFinishedACSS_SSyAA0cD6ResultOctcfc",
             "moduleName": "JedlixSDK",
             "declAttributes": [
               "Custom",
@@ -370,30 +427,16 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "ModifiedContent",
-                "printedName": "SwiftUI.ModifiedContent<some SwiftUI.View, SwiftUI._AppearanceActionModifier>",
+                "name": "OpaqueTypeArchetype",
+                "printedName": "some SwiftUI.View",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "OpaqueTypeArchetype",
-                    "printedName": "some SwiftUI.View",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "View",
-                        "printedName": "SwiftUI.View",
-                        "usr": "s:7SwiftUI4ViewP"
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "_AppearanceActionModifier",
-                    "printedName": "SwiftUI._AppearanceActionModifier",
-                    "usr": "s:7SwiftUI25_AppearanceActionModifierV"
+                    "name": "View",
+                    "printedName": "SwiftUI.View",
+                    "usr": "s:7SwiftUI4ViewP"
                   }
-                ],
-                "usr": "s:7SwiftUI15ModifiedContentV"
+                ]
               }
             ],
             "declKind": "Var",
@@ -412,30 +455,16 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "ModifiedContent",
-                    "printedName": "SwiftUI.ModifiedContent<some SwiftUI.View, SwiftUI._AppearanceActionModifier>",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some SwiftUI.View",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "OpaqueTypeArchetype",
-                        "printedName": "some SwiftUI.View",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "View",
-                            "printedName": "SwiftUI.View",
-                            "usr": "s:7SwiftUI4ViewP"
-                          }
-                        ]
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "_AppearanceActionModifier",
-                        "printedName": "SwiftUI._AppearanceActionModifier",
-                        "usr": "s:7SwiftUI25_AppearanceActionModifierV"
+                        "name": "View",
+                        "printedName": "SwiftUI.View",
+                        "usr": "s:7SwiftUI4ViewP"
                       }
-                    ],
-                    "usr": "s:7SwiftUI15ModifiedContentV"
+                    ]
                   }
                 ],
                 "declKind": "Accessor",
@@ -468,30 +497,16 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "ModifiedContent",
-                    "printedName": "SwiftUI.ModifiedContent<some SwiftUI.View, SwiftUI._AppearanceActionModifier>",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some SwiftUI.View",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "OpaqueTypeArchetype",
-                        "printedName": "some SwiftUI.View",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "View",
-                            "printedName": "SwiftUI.View",
-                            "usr": "s:7SwiftUI4ViewP"
-                          }
-                        ]
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "_AppearanceActionModifier",
-                        "printedName": "SwiftUI._AppearanceActionModifier",
-                        "usr": "s:7SwiftUI25_AppearanceActionModifierV"
+                        "name": "View",
+                        "printedName": "SwiftUI.View",
+                        "usr": "s:7SwiftUI4ViewP"
                       }
-                    ],
-                    "usr": "s:7SwiftUI15ModifiedContentV"
+                    ]
                   }
                 ]
               }
@@ -1399,17 +1414,17 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
-          },
-          {
-            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
           }
         ]
       },
@@ -3511,6 +3526,184 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "ConnectSessionResult",
+        "printedName": "ConnectSessionResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "finished",
+            "printedName": "finished",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(JedlixSDK.ConnectSessionResult.Type) -> (Swift.String) -> JedlixSDK.ConnectSessionResult",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> JedlixSDK.ConnectSessionResult",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConnectSessionResult",
+                        "printedName": "JedlixSDK.ConnectSessionResult",
+                        "usr": "s:9JedlixSDK20ConnectSessionResultO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(sessionId: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "JedlixSDK.ConnectSessionResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConnectSessionResult",
+                        "printedName": "JedlixSDK.ConnectSessionResult",
+                        "usr": "s:9JedlixSDK20ConnectSessionResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:9JedlixSDK20ConnectSessionResultO8finishedyACSS_tcACmF",
+            "mangledName": "$s9JedlixSDK20ConnectSessionResultO8finishedyACSS_tcACmF",
+            "moduleName": "JedlixSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "inProgress",
+            "printedName": "inProgress",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(JedlixSDK.ConnectSessionResult.Type) -> (Swift.String) -> JedlixSDK.ConnectSessionResult",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> JedlixSDK.ConnectSessionResult",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConnectSessionResult",
+                        "printedName": "JedlixSDK.ConnectSessionResult",
+                        "usr": "s:9JedlixSDK20ConnectSessionResultO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(sessionId: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "JedlixSDK.ConnectSessionResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConnectSessionResult",
+                        "printedName": "JedlixSDK.ConnectSessionResult",
+                        "usr": "s:9JedlixSDK20ConnectSessionResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:9JedlixSDK20ConnectSessionResultO10inProgressyACSS_tcACmF",
+            "mangledName": "$s9JedlixSDK20ConnectSessionResultO10inProgressyACSS_tcACmF",
+            "moduleName": "JedlixSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "notStarted",
+            "printedName": "notStarted",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(JedlixSDK.ConnectSessionResult.Type) -> JedlixSDK.ConnectSessionResult",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ConnectSessionResult",
+                    "printedName": "JedlixSDK.ConnectSessionResult",
+                    "usr": "s:9JedlixSDK20ConnectSessionResultO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "JedlixSDK.ConnectSessionResult.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ConnectSessionResult",
+                        "printedName": "JedlixSDK.ConnectSessionResult",
+                        "usr": "s:9JedlixSDK20ConnectSessionResultO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:9JedlixSDK20ConnectSessionResultO10notStartedyA2CmF",
+            "mangledName": "$s9JedlixSDK20ConnectSessionResultO10notStartedyA2CmF",
+            "moduleName": "JedlixSDK"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:9JedlixSDK20ConnectSessionResultO",
+        "mangledName": "$s9JedlixSDK20ConnectSessionResultO",
+        "moduleName": "JedlixSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JedlixSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Var",
         "name": "isConfigured",
         "printedName": "isConfigured",
@@ -3878,676 +4071,102 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
       "kind": "StringLiteral",
       "offset": 2091,
       "length": 9,
       "value": "\"\/api\/v1\""
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
       "kind": "StringLiteral",
       "offset": 2145,
       "length": 37,
       "value": "\"\/users\/%@\/vehicles\/connect-sessions\""
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
       "kind": "StringLiteral",
       "offset": 2226,
       "length": 40,
       "value": "\"\/users\/%@\/vehicles\/%@\/connect-sessions\""
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
       "kind": "StringLiteral",
       "offset": 2315,
       "length": 59,
       "value": "\"\/users\/%@\/charging-locations\/%@\/chargers\/connect-sessions\""
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
       "kind": "StringLiteral",
       "offset": 2412,
       "length": 28,
       "value": "\"\/users\/%@\/connect-sessions\""
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
       "kind": "StringLiteral",
       "offset": 2477,
       "length": 31,
       "value": "\"\/users\/%@\/connect-sessions\/%@\""
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
       "kind": "StringLiteral",
       "offset": 2549,
       "length": 36,
       "value": "\"\/users\/%@\/connect-sessions\/%@\/info\""
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 3125,
-      "length": 6,
-      "value": "\"POST\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 3215,
-      "length": 20,
-      "value": "\"dismissButtonStyle\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "Array",
-      "offset": 3357,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 3727,
-      "length": 6,
-      "value": "\"POST\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 3817,
-      "length": 20,
-      "value": "\"dismissButtonStyle\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "Array",
-      "offset": 3959,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 4348,
-      "length": 6,
-      "value": "\"POST\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 4438,
-      "length": 20,
-      "value": "\"dismissButtonStyle\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "Array",
-      "offset": 4580,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 5257,
-      "length": 5,
-      "value": "\"GET\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 5346,
-      "length": 20,
-      "value": "\"dismissButtonStyle\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "Array",
-      "offset": 5488,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 5825,
-      "length": 6,
-      "value": "\"POST\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
       "kind": "Array",
       "offset": 6025,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 6487,
-      "length": 8,
-      "value": "\"ApiKey\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 6532,
-      "length": 23,
-      "value": "\"Bearer \""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 6554,
-      "length": 24,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 6577,
-      "length": 15,
-      "value": "\"Authorization\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 6619,
-      "length": 33,
-      "value": "\"application\/json; charset=utf-8\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 6674,
-      "length": 14,
-      "value": "\"Content-Type\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 6715,
-      "length": 7,
-      "value": "\"1.5.0\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 6744,
-      "length": 22,
-      "value": "\"Jedlix-ClientVersion\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 7325,
-      "length": 9,
-      "value": "\"vehicle\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 7390,
-      "length": 9,
-      "value": "\"charger\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 7432,
-      "length": 29,
-      "value": "\"Invalid ConnectSession type\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 7534,
-      "length": 6,
-      "value": "\"type\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 7697,
-      "length": 5,
-      "value": "\"GET\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8689,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 8746,
-      "length": 3,
-      "value": "\"1\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 8774,
-      "length": 5,
-      "value": "\"vId\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8805,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 8834,
-      "length": 261,
-      "value": "\"https:\/\/auth.tesla.com\/oauth2\/v1\/authorize?redirect_uri=https:\/\/www.tesla.com\/teslaaccount\/owner-xp\/auth\/callback&response_type=code&client_id=ownership&scope=offline_access%20openid%20ou_code%20email&audience=https%3A%2F%2Fownership.tesla.com%2F&locale=nl-NL\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 9122,
-      "length": 43,
-      "value": "\"https:\/\/auth.tesla.com\/oauth2\/v1\/register\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9236,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "Array",
-      "offset": 9274,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9314,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9524,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 9581,
-      "length": 3,
-      "value": "\"1\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9644,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 9673,
-      "length": 261,
-      "value": "\"https:\/\/auth.tesla.com\/oauth2\/v1\/authorize?redirect_uri=https:\/\/www.tesla.com\/teslaaccount\/owner-xp\/auth\/callback&response_type=code&client_id=ownership&scope=offline_access%20openid%20ou_code%20email&audience=https%3A%2F%2Fownership.tesla.com%2F&locale=nl-NL\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 9961,
-      "length": 43,
-      "value": "\"https:\/\/auth.tesla.com\/oauth2\/v1\/register\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10075,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "Array",
-      "offset": 10113,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10153,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10368,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 10425,
-      "length": 3,
-      "value": "\"2\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 10453,
-      "length": 5,
-      "value": "\"cId\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10536,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 10565,
-      "length": 261,
-      "value": "\"https:\/\/auth.tesla.com\/oauth2\/v1\/authorize?redirect_uri=https:\/\/www.tesla.com\/teslaaccount\/owner-xp\/auth\/callback&response_type=code&client_id=ownership&scope=offline_access%20openid%20ou_code%20email&audience=https%3A%2F%2Fownership.tesla.com%2F&locale=nl-NL\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 10853,
-      "length": 43,
-      "value": "\"https:\/\/auth.tesla.com\/oauth2\/v1\/register\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10967,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "Array",
-      "offset": 11005,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 11045,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "IntegerLiteral",
-      "offset": 11188,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 11263,
-      "length": 3,
-      "value": "\"1\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 11295,
-      "length": 5,
-      "value": "\"vId\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 11330,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "IntegerLiteral",
-      "offset": 11573,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 11648,
-      "length": 3,
-      "value": "\"2\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 11680,
-      "length": 5,
-      "value": "\"cId\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "StringLiteral",
-      "offset": 11723,
-      "length": 8,
-      "value": "\"cLocId\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 11761,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "IntegerLiteral",
-      "offset": 12058,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 12150,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "IntegerLiteral",
-      "offset": 12397,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/JedlixHTTPClient.swift",
-      "kind": "BooleanLiteral",
-      "offset": 12489,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionView.swift",
-      "kind": "StringLiteral",
-      "offset": 686,
-      "length": 27,
-      "value": "\"Jedlix SDK not configured\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionView.swift",
-      "kind": "StringLiteral",
-      "offset": 1396,
-      "length": 27,
-      "value": "\"Jedlix SDK not configured\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionView.swift",
-      "kind": "StringLiteral",
-      "offset": 2064,
-      "length": 27,
-      "value": "\"Jedlix SDK not configured\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2780,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/ConnectSession.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/ConnectSession.swift",
       "kind": "BooleanLiteral",
       "offset": 316,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/ConnectSession.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/ConnectSession.swift",
       "kind": "Array",
       "offset": 358,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/ConnectSession.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/Networking\/ConnectSession.swift",
       "kind": "BooleanLiteral",
       "offset": 397,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 398,
+      "offset": 467,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 541,
+      "offset": 610,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1145,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1466,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1802,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
-      "kind": "StringLiteral",
-      "offset": 4793,
-      "length": 47,
-      "value": "\"document.documentElement.outerHTML.toString()\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
-      "kind": "StringLiteral",
-      "offset": 6085,
-      "length": 7,
-      "value": "\"Error\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
-      "kind": "StringLiteral",
-      "offset": 6187,
-      "length": 7,
-      "value": "\"Error\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
-      "kind": "StringLiteral",
-      "offset": 6636,
-      "length": 7,
-      "value": "\"Retry\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
-      "kind": "StringLiteral",
-      "offset": 6971,
-      "length": 4,
-      "value": "\"OK\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
-      "kind": "BooleanLiteral",
-      "offset": 7095,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
       "kind": "StringLiteral",
       "offset": 145,
       "length": 23,
       "value": "\"JedlixSDK.ConnectSessionViewModel\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/JedlixConnectView\/ConnectSessionViewModel.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8133,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/HTTPError.swift",
-      "kind": "StringLiteral",
-      "offset": 382,
-      "length": 19,
-      "value": "\"Not authenticated\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/HTTPError.swift",
-      "kind": "StringLiteral",
-      "offset": 440,
-      "length": 18,
-      "value": "\"Invalid response\""
-    },
-    {
-      "filePath": "\/Users\/Tom\/Developer\/Jedlix\/Source\/JedlixSDK\/ios\/JedlixSDK\/Networking\/HTTPError.swift",
-      "kind": "StringLiteral",
-      "offset": 616,
-      "length": 4,
-      "value": "\": \""
     }
   ]
 }
