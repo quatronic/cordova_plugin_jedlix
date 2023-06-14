@@ -37,8 +37,8 @@ class JedlixPlugin: CDVPlugin {
 
 
 @objc class ConnectView: NSObject {
-     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback: ([String: String]) -> Void) -> UIViewController {
-         let baseURL = URL(string: "https://demo-smartcharging.jedlix.com")!
+     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback: (String) -> Void) -> UIViewController {
+         let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
          let apiKey: String? = nil
         
          let authentication = DefaultAuthentication()
@@ -47,11 +47,13 @@ class JedlixPlugin: CDVPlugin {
         
          return UIHostingController(rootView: 
             ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId) { result in
+                /*
                 switch result {
                 case .notStarted: callback([state: "notStarted"])
                 case .inProgress(let sessionId): callback([state: "inProgress", sessionId: sessionId])
                 case .finished(let sessionId): callback([state: "finished", sessionId: sessionId])
-                }
+                } */
+                callback("Connection ended")
             }
          )
      }
