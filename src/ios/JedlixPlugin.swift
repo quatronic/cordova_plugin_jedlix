@@ -51,7 +51,7 @@ class JedlixPlugin: CDVPlugin {
          authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
 
          return UIHostingController(rootView: 
-            ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId) { result in
+            ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId) { (result) -> () in
                 callback1("Connection ended")
                 /*
                 switch result {
