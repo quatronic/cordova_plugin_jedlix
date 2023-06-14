@@ -18,10 +18,10 @@ class JedlixPlugin: CDVPlugin {
 
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
 
-        /*Send no result callback
+        // Send no result callback
         let resultvehicle = CDVPluginResult(status: CDVCommandStatus_NO_RESULT)
         resultvehicle.setKeepCallback(true)
-        self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)*/
+        self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)
         
     }
 
@@ -52,7 +52,14 @@ class JedlixPlugin: CDVPlugin {
 
          return UIHostingController(rootView:
             ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId) { result in
-                callback1("Connection ended")
+                //callback1("Connection ended")
+                                /*
+                switch result {
+                case .notStarted: callback([state: "notStarted"])
+                case .inProgress(let sessionId): callback([state: "inProgress", sessionId: sessionId])
+                case .finished(let sessionId): callback([state: "finished", sessionId: sessionId])
+                } 
+                */
             }
          )
      }
