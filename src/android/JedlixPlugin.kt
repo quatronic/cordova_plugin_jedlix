@@ -26,11 +26,10 @@ class JedlixPlugin : CordovaPlugin() {
             var result: PluginResult
 
             baseURL = URL("https://qa-nextenergy-smartcharging.jedlix.com")
-            apiKey = ""
 
             try {
                 authentication = DefaultAuthentication(cordova.getContext())
-                JedlixSDK.configure(baseURL, apiKey, authentication)
+                JedlixSDK.configure(baseURL, null, authentication)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
                 callbackContext.sendPluginResult(result)

@@ -10,6 +10,8 @@ class ConnectionsActivity : AppCompatActivity() {
     private lateinit var vehicleIdentifier: String
      
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
         userIdentifier = intent.getStringExtra("userId") ?: ""
         vehicleIdentifier = intent.getStringExtra("vehicleId") ?: ""
         
