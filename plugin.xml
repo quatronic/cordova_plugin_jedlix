@@ -25,7 +25,7 @@
     </platform>
 
     <platform name="android">
-        <framework src="com.jedlix:sdk:1.5.0" />	
+        <framework src="com.jedlix:sdk:1.6.1" />	
 
         <source-file src="src/android/Authentication.kt" target-dir="src/main/kotlin" />
         <source-file src="src/android/DefaultAuthentication.kt" target-dir="src/main/kotlin" />
