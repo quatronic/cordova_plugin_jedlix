@@ -9,7 +9,7 @@ class JedlixPlugin: CDVPlugin {
         let accesstoken = command.arguments[1] as? String ?? ""
         let vehicleid = command.arguments[2] as? String ?? ""
 
-        let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
+        let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { (result) -> () in
         /*
             let resultvehicle = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: result)
             self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)
@@ -42,15 +42,13 @@ class JedlixPlugin: CDVPlugin {
 
 
 @objc class ConnectView: NSObject {
-     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback1: (String) -> Void) -> UIViewController {
+     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback1: (String) -> ()) -> UIViewController {
          let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
          let apiKey: String? = nil
         
          let authentication = DefaultAuthentication()
          JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
          authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
-        
-        
 
          return UIHostingController(rootView: 
             ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId) { result in
