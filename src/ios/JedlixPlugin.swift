@@ -10,8 +10,10 @@ class JedlixPlugin: CDVPlugin {
         let vehicleid = command.arguments[2] as? String ?? ""
 
         let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
+        /*
             let resultvehicle = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: result)
             self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)
+            */
         }
 
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
@@ -37,7 +39,7 @@ class JedlixPlugin: CDVPlugin {
 
 
 @objc class ConnectView: NSObject {
-     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback: (String) -> ()) -> UIViewController {
+     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback: (String) -> Void) -> UIViewController {
          let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
          let apiKey: String? = nil
         
