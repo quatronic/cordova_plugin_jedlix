@@ -44,7 +44,7 @@
         </config-file>
         
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:name="com.quatronic.jedlixplugin.ConnectionsActivity" />
+            <activity android:name="com.quatronic.jedlixplugin.ConnectionActivity" />
         </config-file>  
     </platform>
 </plugin>

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.jedlix.sdk.connectSession.registerConnectSessionManager
 import com.jedlix.sdk.connectSession.ConnectSessionType
 
-class ConnectionsActivity : AppCompatActivity() {
+class ConnectionActivity : AppCompatActivity() {
     private lateinit var userIdentifier: String
     private lateinit var vehicleIdentifier: String
      

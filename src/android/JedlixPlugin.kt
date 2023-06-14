@@ -36,7 +36,7 @@ class JedlixPlugin : CordovaPlugin() {
             }
             
             try {
-                val intent = Intent(cordova.getContext(), ConnectionsActivity::class.java)
+                val intent = Intent(cordova.getContext(), ConnectionActivity::class.java)
                 intent.putExtra("userId", userId)
                 intent.putExtra("vehicleId", vehicleId)
                 cordova.getContext().startActivity(intent)
@@ -46,9 +46,9 @@ class JedlixPlugin : CordovaPlugin() {
             }
             
             //Standard Cordova stuff
-            result = PluginResult(PluginResult.Status.OK, "Test")
+            result = PluginResult(PluginResult.Status.NO_RESULT)
+            result.setKeepCallback(true)
             callbackContext.sendPluginResult(result)
-            
             return true
         }
         
