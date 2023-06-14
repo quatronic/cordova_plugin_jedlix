@@ -14,7 +14,7 @@ class ConnectionActivity : AppCompatActivity() {
 
         userIdentifier = intent.getStringExtra("userId") ?: ""
         vehicleIdentifier = intent.getStringExtra("vehicleId") ?: ""
-        
+        println("--- User " + userIdentifier + " vehicle " + vehicleIdentifier)
         val connectSessionManager = registerConnectSessionManager { result ->
             // Activity.RESULT_OK Activity.RESULT_CANCELED result.sessionId/ 
         }
@@ -23,5 +23,9 @@ class ConnectionActivity : AppCompatActivity() {
             userIdentifier,
             ConnectSessionType.SelectedVehicle(vehicleIdentifier)
         )
+
+
     }
+
+
 }
