@@ -19,9 +19,7 @@ class JedlixPlugin: CDVPlugin {
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
 
         //Send no result callback        
-        let resultvehicle = CDVPluginResult(status: CDVCommandStatus_NO_RESULT)
-        resultvehicle.setKeepCallback(true)
-        self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)
+        
     }
 
     @objc(chargerMethod:)
