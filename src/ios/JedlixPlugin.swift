@@ -42,7 +42,7 @@ class JedlixPlugin: CDVPlugin {
 
 
 @objc class ConnectView: NSObject {
-     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, completion: (String) -> Void) -> UIViewController {
+     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback1: (String) -> Void) -> UIViewController {
          let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
          let apiKey: String? = nil
         
@@ -62,7 +62,7 @@ class JedlixPlugin: CDVPlugin {
                 } 
                 */
 
-                completion("Connection ended")
+                callback1("Connection ended")
             }
          )
      }
