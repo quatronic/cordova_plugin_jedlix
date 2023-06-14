@@ -18,7 +18,10 @@ class JedlixPlugin: CDVPlugin {
 
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
 
-        //Send no result callback        
+        //Send no result callback
+        let resultvehicle = CDVPluginResult(status: CDVCommandStatus_NO_RESULT)
+        resultvehicle.setKeepCallback(true)
+        self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)        
         
     }
 
@@ -39,7 +42,7 @@ class JedlixPlugin: CDVPlugin {
 
 
 @objc class ConnectView: NSObject {
-     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback1: (String) -> Void) -> UIViewController {
+     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, completion: (String) -> Void) -> UIViewController {
          let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
          let apiKey: String? = nil
         
@@ -59,7 +62,7 @@ class JedlixPlugin: CDVPlugin {
                 } 
                 */
 
-                callback1("Connection ended")
+                completion("Connection ended")
             }
          )
      }

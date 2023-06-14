@@ -27,5 +27,7 @@ class ConnectionActivity : AppCompatActivity() {
 
     }
 
+    fun onResume
+
 
 }
