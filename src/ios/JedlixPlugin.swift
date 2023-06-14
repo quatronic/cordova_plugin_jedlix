@@ -52,8 +52,8 @@ class JedlixPlugin: CDVPlugin {
                 case .notStarted: callback([state: "notStarted"])
                 case .inProgress(let sessionId): callback([state: "inProgress", sessionId: sessionId])
                 case .finished(let sessionId): callback([state: "finished", sessionId: sessionId])
-                } 
-                callback("Connection ended")*/
+                } */
+                callback("Connection ended")
             }
          )
      }
