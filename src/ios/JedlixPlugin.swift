@@ -60,7 +60,7 @@ class JedlixPlugin: CDVPlugin {
                 } 
                 */
 
-                //callback1("Connection ended")
+                callback1("Connection ended")
             }
          )
      }
