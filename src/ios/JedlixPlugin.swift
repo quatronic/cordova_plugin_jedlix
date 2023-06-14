@@ -50,17 +50,10 @@ class JedlixPlugin: CDVPlugin {
          JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
          authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
 
-         return UIHostingController(rootView: 
+         return UIHostingController(rootView:
             ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId) { result in
                 callback1("Connection ended")
             }
-                /*
-                switch result {
-                case .notStarted: callback([state: "notStarted"])
-                case .inProgress(let sessionId): callback([state: "inProgress", sessionId: sessionId])
-                case .finished(let sessionId): callback([state: "finished", sessionId: sessionId])
-                } 
-                */
          )
      }
 
