@@ -12,6 +12,10 @@ class JedlixPlugin: CDVPlugin {
             let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAsMultipart: result)
             self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
         }
+
+        let pluginResult = CDVPluginResult(status: CDVCommandStatus_NO_RESULT)
+        pluginResult.setKeepCallback(true)
+        self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
         
         UIApplication.shared.rootViewController?.present(vc, animated: true, completion: nil)
     }
