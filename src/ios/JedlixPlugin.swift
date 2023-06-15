@@ -1,6 +1,6 @@
 import SwiftUI
 import JedlixSDK
-​
+
 class JedlixPlugin: CDVPlugin {
     @objc(coolMethod:)
     func coolMethod(command: CDVInvokedUrlCommand) {
@@ -29,8 +29,8 @@ class JedlixPlugin: CDVPlugin {
         self.commandDelegate.send(resultcharger, callbackId: command.callbackId)
     }
 }
-​
-​
+
+
 @objc class ConnectView: NSObject {
     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback: @escaping ([String]) -> Void) -> UIViewController {
         let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
@@ -62,7 +62,7 @@ class JedlixPlugin: CDVPlugin {
         return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, sessionType: type))
     }
 }
-​
+
 extension UIApplication {
     var rootViewController: UIViewController? {
         UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController
