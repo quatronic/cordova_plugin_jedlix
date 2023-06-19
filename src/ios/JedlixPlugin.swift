@@ -9,7 +9,7 @@ class JedlixPlugin: CDVPlugin {
         let vehicleid = command.arguments[2] as? String ?? ""
         
         let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
-            
+            print(result)
         }
 
         UIApplication.shared.rootViewController?.present(vc, animated: true, completion: nil)
