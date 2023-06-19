@@ -11,11 +11,11 @@ class JedlixPlugin: CDVPlugin {
         let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
             
         }
+
         UIApplication.shared.rootViewController?.present(vc, animated: true, completion: nil)
 
-        let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAsMultipart: result)
+        let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
         self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
-        
         /*
         let pluginResult = CDVPluginResult(status: CDVCommandStatus_NO_RESULT)
         pluginResult.setKeepCallbackAsBool(true)
