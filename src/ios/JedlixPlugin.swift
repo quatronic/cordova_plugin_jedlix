@@ -8,19 +8,11 @@ class JedlixPlugin: CDVPlugin {
         let accesstoken = command.arguments[1] as? String ?? ""
         let vehicleid = command.arguments[2] as? String ?? ""
         
-        let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
-            print(result)
-        }
-
+        let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid)
         UIApplication.shared.rootViewController?.present(vc, animated: true, completion: nil)
 
         let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
         self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
-        /*
-        let pluginResult = CDVPluginResult(status: CDVCommandStatus_NO_RESULT)
-        pluginResult.setKeepCallbackAsBool(true)
-        self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
-        */
     }
     
     @objc(chargerMethod:)
@@ -39,7 +31,7 @@ class JedlixPlugin: CDVPlugin {
 
 
 @objc class ConnectView: NSObject {
-    @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback: @escaping ([String]) -> Void) -> UIViewController {
+    @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String) -> UIViewController {
         let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
         let apiKey: String? = nil
         
@@ -47,25 +39,18 @@ class JedlixPlugin: CDVPlugin {
         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
         authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
         
-        return UIHostingController(rootView:
-            ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId) { result in
-                switch result {
-                case .notStarted: callback(["notStarted"])
-                case .inProgress(let sessionId): callback(["inProgress", sessionId])
-                case .finished(let sessionId): callback(["finished", sessionId])
-                default: break
-                }
-            }
-        )
+        return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId))
     }
     
     @objc static func createCharger(userId: String, accessToken: String, chargingLocationId: String) -> UIViewController {
         let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
         let apiKey: String? = nil
+
         let authentication = DefaultAuthentication()
         let type = ConnectSessionType.charger(chargingLocationId: chargingLocationId)
         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
         authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
+        
         return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, sessionType: type))
     }
 }
