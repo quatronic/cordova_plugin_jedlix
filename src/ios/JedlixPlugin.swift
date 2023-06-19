@@ -9,16 +9,16 @@ class JedlixPlugin: CDVPlugin {
         let vehicleid = command.arguments[2] as? String ?? ""
         
         let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
-            let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAsMultipart: result)
-            self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
+            let pluginResultConnected = CDVPluginResult(status: CDVCommandStatus_OK, messageAsMultipart: result)
+            self.commandDelegate.send(pluginResultConnected, callbackId: command.callbackId)
         }
 
         UIApplication.shared.rootViewController?.present(vc, animated: true, completion: nil)
-        /*
+        
         let pluginResult = CDVPluginResult(status: CDVCommandStatus_NO_RESULT)
         pluginResult.setKeepCallbackAsBool(true)
         self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
-        */
+        
     }
     
     @objc(chargerMethod:)
