@@ -32,8 +32,8 @@ class JedlixPlugin: CDVPlugin {
 
 @objc class ConnectView: NSObject {
     @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String) -> UIViewController {
-        let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
-        let apiKey: String? = "yoxLQsajt0Kz1VsJrnioXp9QQYvc83BY7b64osyr"
+        let baseURL = URL(string: "https://demo-smartcharging.jedlix.com")!
+        let apiKey: String? = nil
         
         let authentication = DefaultAuthentication()
         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
@@ -43,8 +43,8 @@ class JedlixPlugin: CDVPlugin {
     }
     
     @objc static func createCharger(userId: String, accessToken: String, chargingLocationId: String) -> UIViewController {
-        let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
-        let apiKey: String? = "yoxLQsajt0Kz1VsJrnioXp9QQYvc83BY7b64osyr"
+        let baseURL = URL(string: "https://demo-smartcharging.jedlix.com")!
+        let apiKey: String? = nil
 
         let authentication = DefaultAuthentication()
         let type = ConnectSessionType.charger(chargingLocationId: chargingLocationId)
