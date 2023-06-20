@@ -1,8 +1,8 @@
 import SwiftUI
 import JedlixSDK
 
-class JedlixPlugin: CDVPlugin {
-    @objc(coolMethod:)
+@objc(JedlixPlugin) class JedlixPlugin: CDVPlugin {
+
     func coolMethod(command: CDVInvokedUrlCommand) {
         let userid = command.arguments[0] as? String ?? ""
         let accesstoken = command.arguments[1] as? String ?? ""
@@ -15,7 +15,6 @@ class JedlixPlugin: CDVPlugin {
         self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)
     }
     
-    @objc(chargerMethod:)
     func chargerMethod(command: CDVInvokedUrlCommand) {
         let userid = command.arguments[0] as? String ?? ""
         let accesstoken = command.arguments[1] as? String ?? ""
