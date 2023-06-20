@@ -9,10 +9,10 @@ class JedlixPlugin: CDVPlugin {
         let vehicleid = command.arguments[2] as? String ?? ""
         
         let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid)
-        UIApplication.shared.rootViewController?.present(vc, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
 
-        let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
-        self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
+        let resultvehicle = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
+        self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)
     }
     
     @objc(chargerMethod:)
@@ -21,8 +21,8 @@ class JedlixPlugin: CDVPlugin {
         let accesstoken = command.arguments[1] as? String ?? ""
         let chargingLocationid = command.arguments[2] as? String ?? ""
         
-        let vc = ConnectView.createCharger(userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid)
-        UIApplication.shared.rootViewController?.present(vc, animated: true, completion: nil)
+        let cc = ConnectView.createCharger(userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid)
+        UIApplication.shared.keyWindow?.rootViewController?.present(cc, animated: true, completion: nil)
         
         let resultcharger = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
         self.commandDelegate.send(resultcharger, callbackId: command.callbackId)
