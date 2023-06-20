@@ -25,7 +25,7 @@
     </platform>
 
     <platform name="android">
-        <framework src="com.jedlix:sdk:1.6.1" />	
+        <framework src="com.jedlix:sdk:1.5.0" />	
 
         <source-file src="src/android/Authentication.kt" target-dir="src/main/kotlin" />
         <source-file src="src/android/DefaultAuthentication.kt" target-dir="src/main/kotlin" />
@@ -44,7 +44,7 @@
         </config-file>
         
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:name="com.quatronic.jedlixplugin.ConnectionActivity" />
+            <activity android:name="com.quatronic.jedlixplugin.ConnectionsActivity" />
         </config-file>  
     </platform>
 </plugin>

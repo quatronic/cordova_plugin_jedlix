@@ -26,30 +26,30 @@ class JedlixPlugin : CordovaPlugin() {
             var result: PluginResult
 
             baseURL = URL("https://qa-nextenergy-smartcharging.jedlix.com")
+            apiKey = ""
 
             try {
-                authentication = DefaultAuthentication(cordova.getActivity())
-                println("---Somelogline")
-                JedlixSDK.configure(baseURL, null, authentication)
+                authentication = DefaultAuthentication(cordova.getContext())
+                JedlixSDK.configure(baseURL, apiKey, authentication)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
                 callbackContext.sendPluginResult(result)
             }
             
             try {
-                val intent = Intent(cordova.getContext(), ConnectionActivity::class.java)
+                val intent = Intent(cordova.getContext(), ConnectionsActivity::class.java)
                 intent.putExtra("userId", userId)
                 intent.putExtra("vehicleId", vehicleId)
-                cordova.getActivity().startActivity(intent)
+                cordova.getContext().startActivity(intent)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Error starting the activity: " + e.message)
                 callbackContext.sendPluginResult(result)
             }
             
             //Standard Cordova stuff
-            result = PluginResult(PluginResult.Status.NO_RESULT)
-            result.setKeepCallback(true)
+            result = PluginResult(PluginResult.Status.OK, "Test")
             callbackContext.sendPluginResult(result)
+            
             return true
         }
         
