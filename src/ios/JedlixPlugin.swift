@@ -54,9 +54,9 @@ class JedlixPlugin: CDVPlugin {
         return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, sessionType: type))
     }
 }
-
+/*
 extension UIApplication {
     var rootViewController: UIViewController? {
         UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController
     }
-}
+}*/
