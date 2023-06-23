@@ -13,7 +13,7 @@ import JedlixSDK
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
 
         let resultvehicle = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
-        self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)
+        self.commandDelegate!.send(resultvehicle, callbackId: command.callbackId)
     }
 
     @objc(chargerMethod:)
@@ -27,7 +27,7 @@ import JedlixSDK
         UIApplication.shared.keyWindow?.rootViewController?.present(cc, animated: true, completion: nil)
         */
         let resultcharger = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
-        self.commandDelegate.send(resultcharger, callbackId: command.callbackId)
+        self.commandDelegate!.send(resultcharger, callbackId: command.callbackId)
     }
 }
 
