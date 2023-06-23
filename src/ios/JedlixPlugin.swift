@@ -1,5 +1,6 @@
 import SwiftUI
 import JedlixSDK
+import UIKit
 
 @objc class JedlixPlugin: CDVPlugin {
     @objc(coolMethod:)
@@ -22,7 +23,7 @@ import JedlixSDK
         // Create a new alert 
         var dialogMessage = UIAlertController(title: "Attention", message: "I am an alert message you cannot dissmiss.", preferredStyle: .alert)
         self.present(dialogMessage, animated: true, completion: nil)
-        
+
         /*
         let userid = command.arguments[0] as? String ?? ""
         let accesstoken = command.arguments[1] as? String ?? ""
