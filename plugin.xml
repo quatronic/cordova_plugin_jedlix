@@ -16,9 +16,9 @@
             <feature name="JedlixPlugin">
                 <param name="ios-package" value="JedlixPlugin" />
             </feature>
-            <access origin="http://*.jedlix.com" />
-            <allow-navigation href="*://*.jedlix.com/*" />
-            <allow-intent href="*://*.jedlix.com/*" />
+            <access origin="*" />
+            <allow-navigation href="*" />
+            <allow-intent href="*" />
         </config-file>
         <framework src="src/ios/JedlixSDK.framework" embed="true" custom="true" />
         <source-file src="src/ios/JedlixPlugin.swift" />

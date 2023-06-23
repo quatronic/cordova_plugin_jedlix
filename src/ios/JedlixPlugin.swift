@@ -22,10 +22,10 @@ class JedlixPlugin: CDVPlugin {
         let userid = command.arguments[0] as? String ?? ""
         let accesstoken = command.arguments[1] as? String ?? ""
         let chargingLocationid = command.arguments[2] as? String ?? ""
-
+        /*
         let cc = ConnectView.createCharger(userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid)
         UIApplication.shared.keyWindow?.rootViewController?.present(cc, animated: true, completion: nil)
-
+        */
         let resultcharger = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
         self.commandDelegate.send(resultcharger, callbackId: command.callbackId)
     }
