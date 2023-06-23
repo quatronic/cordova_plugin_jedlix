@@ -21,8 +21,8 @@ import JedlixSDK
         
         // Create a new alert 
         var dialogMessage = UIAlertController(title: "Attention", message: "I am an alert message you cannot dissmiss.", preferredStyle: .alert)
-        // Present alert to user
         self.present(dialogMessage, animated: true, completion: nil)
+        
         /*
         let userid = command.arguments[0] as? String ?? ""
         let accesstoken = command.arguments[1] as? String ?? ""
