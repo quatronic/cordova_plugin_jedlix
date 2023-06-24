@@ -1,7 +1,7 @@
 import SwiftUI
 import JedlixSDK
 
-@objc class JedlixPlugin: CDVPlugin {
+class JedlixPlugin: CDVPlugin {
     @objc(coolMethod:)
     func coolMethod(command: CDVInvokedUrlCommand) {
 
@@ -13,22 +13,21 @@ import JedlixSDK
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
 
         let resultvehicle = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
-        self.commandDelegate!.send(resultvehicle, callbackId: command.callbackId)
+        self.commandDelegate.send(resultvehicle, callbackId: command.callbackId)
     }
 
     @objc(chargerMethod:)
     func chargerMethod(command: CDVInvokedUrlCommand) {
-        
+
         let userid = command.arguments[0] as? String ?? ""
         let accesstoken = command.arguments[1] as? String ?? ""
         let chargingLocationid = command.arguments[2] as? String ?? ""
-        
+
         let cc = ConnectView.createCharger(userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid)
         UIApplication.shared.keyWindow?.rootViewController?.present(cc, animated: true, completion: nil)
 
         let resultcharger = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
-        self.commandDelegate!.send(resultcharger, callbackId: command.callbackId)
-
+        self.commandDelegate.send(resultcharger, callbackId: command.callbackId)
     }
 }
 

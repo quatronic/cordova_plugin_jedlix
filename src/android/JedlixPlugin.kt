@@ -1,53 +1,30 @@
 package com.quatronic.jedlixplugin
 
+import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
 import android.content.Intent
-import org.json.JSONArray
-import java.net.URL
+import android.os.Bundle
+import android.widget.Toast
 import org.apache.cordova.CordovaPlugin
 import org.apache.cordova.CallbackContext
 import org.apache.cordova.PluginResult
-import com.jedlix.sdk.JedlixSDK
-
+import com.example.jedlixsdk.ConnectView
+import com.example.jedlixsdk.R
+import com.example.jedlixsdk.ui.ConnectSessionActivity
 
 class JedlixPlugin : CordovaPlugin() {
-    companion object {
-        lateinit var baseURL: URL
-        lateinit var apiKey: String
-        lateinit var authentication: Authentication
-    }
 
     override fun execute(action: String, args: JSONArray, callbackContext: CallbackContext): Boolean {
         if (action == "coolMethod") {
             val userId = args.optString(0, "")
             val accessToken = args.optString(1, "")
             val vehicleId = args.optString(2, "")
-
-            var result: PluginResult
-
-            baseURL = URL("https://qa-nextenergy-smartcharging.jedlix.com")
-            apiKey = ""
-
-            try {
-                authentication = DefaultAuthentication(cordova.getContext())
-                JedlixSDK.configure(baseURL, apiKey, authentication)
-            } catch (e: Exception) {
-                result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
-                callbackContext.sendPluginResult(result)
-            }
+                                 
+            val intent = ConnectView.create(userId, accessToken, vehicleId)
             
-            try {
-                val intent = Intent(cordova.getContext(), ConnectionsActivity::class.java)
-                intent.putExtra("userId", userId)
-                intent.putExtra("vehicleId", vehicleId)
-                cordova.getContext().startActivity(intent)
-            } catch (e: Exception) {
-                result = PluginResult(PluginResult.Status.ERROR, "Error starting the activity: " + e.message)
-                callbackContext.sendPluginResult(result)
-            }
+            startActivity(intent)
             
-            //Standard Cordova stuff
-            result = PluginResult(PluginResult.Status.OK, "Test")
+            val result = PluginResult(PluginResult.Status.OK, "Test")
             callbackContext.sendPluginResult(result)
             
             return true
@@ -57,3 +34,44 @@ class JedlixPlugin : CordovaPlugin() {
     }
 }
 
+class ConnectView {
+
+    companion object {
+        @JvmStatic
+        fun create(userId: String, accessToken: String, vehicleId: String): Intent {
+            val baseURL = "https://qa-nextenergy-smartcharging.jedlix.com"
+            val apiKey: String? = null
+            // val accessToken = "your_access_token"
+            // val userId = "your_user_id"
+            
+            val authentication = DefaultAuthentication()
+            JedlixSDK.configure(baseURL, apiKey, authentication)
+            authentication.authenticate(accessToken, userId)
+            
+            val intent = Intent(this, SomeActivity::class.java)
+            intent.putExtra("userId", userId)
+            intent.putExtra("vehicleId", vehicleId)
+            
+            return intent
+        }
+    }
+}
+
+class SomeActivity : AppCompatActivity() {
+    private lateinit var userIdentifier: String
+    private lateinit var vehicleIdentifier: String
+     
+    override fun onCreate(savedInstanceState: Bundle?) {
+        userIdentifier = intent.getStringExtra("userId") ?: ""
+        vehicleIdentifier = intent.getStringExtra("vehicleId") ?: ""
+        
+        val connectSessionManager = registerConnectSessionManager { result ->
+            // continue when ConnectSessionActivity finishes
+        }
+        
+        connectSessionManager.startConnectSession(
+            userIdentifier,
+            ConnectSessionType.SelectedVehicle(vehicleIdentifier)
+        )
+    }
+}

@@ -2,25 +2,19 @@
 <plugin id="com.quatronic.jedlixplugin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>JedlixPlugin</name>
 	<engines>
-  	    <engine name="cordova" version=">=10.0.0"/>
-        <engine name="cordova-android" version=">=9.0.0"/>
-        <engine name="cordova-ios" version=">=6.2.0"/>
+  		<engine name="cordova-android" version=">=8.0.0" />
 	</engines>
-
+	
     <js-module name="JedlixPlugin" src="www/JedlixPlugin.js">
         <clobbers target="cordova.plugins.JedlixPlugin" />
     </js-module>
 
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
-            <preference name="SwiftVersion" value="5.8.0"/>
-            <preference name="deployment-target" value="16.0" />
+            <preference name="SwiftVersion" value="5"/>
             <feature name="JedlixPlugin">
                 <param name="ios-package" value="JedlixPlugin" />
             </feature>
-            <access origin="*" />
-            <allow-navigation href="*" />
-            <allow-intent href="*" />
         </config-file>
         <framework src="src/ios/JedlixSDK.framework" embed="true" custom="true" />
         <source-file src="src/ios/JedlixPlugin.swift" />
@@ -30,26 +24,19 @@
     </platform>
 
     <platform name="android">
-        <framework src="com.jedlix:sdk:1.5.0" />	
-
-        <source-file src="src/android/Authentication.kt" target-dir="src/main/kotlin" />
-        <source-file src="src/android/DefaultAuthentication.kt" target-dir="src/main/kotlin" />
-        <source-file src="src/android/ConnectionsActivity.kt" target-dir="src/main/kotlin" />
-        <source-file src="src/android/JedlixPlugin.kt" target-dir="src/main/kotlin" />
-
-	    <config-file parent="/*" target="res/xml/config.xml">
-            <preference name="GradlePluginKotlinEnabled" value="true" />
+ r       <config-file parent="/*" target="res/xml/config.xml">
             <preference name="GradlePluginVersion" value="8.0.0" />
-            <preference name="GradlePluginKotlinCodeStyle" value="official" />
-            <preference name="GradlePluginKotlinVersion" value="1.8.10" />
-
-            <feature name="JedlixPlugin">
-                <param name="android-package" value="com.quatronic.jedlixplugin.JedlixPlugin"/>
-            </feature>
-        </config-file>
-        
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:name="com.quatronic.jedlixplugin.ConnectionsActivity" />
-        </config-file>  
+            <preference name="GradlePluginKotlinEnabled" value="true" />
+	    <preference name="GradlePluginKotlinCodeStyle" value="official" />
+	    <preference name="GradlePluginKotlinVersion" value="1.8.10" />
+		<feature name="JedlixPlugin">
+			<param name="android-package" value="com.quatronic.jedlixplugin.JedlixPlugin"/>
+		</feature>
+	</config-file>
+	<config-file parent="/*" target="AndroidManifest.xml"/>
+	<framework src="com.jedlix:sdk:1.5.0" />	    
+	<source-file src="src/android/Authentication.kt" target-dir="src/com/quatronic/jedlixplugin" />
+	<source-file src="src/android/DefaultAuthentication.kt" target-dir="src/com/quatronic/jedlixplugin" />
+	<source-file src="src/android/JedlixPlugin.kt" target-dir="src/com/quatronic/jedlixplugin" />
     </platform>
 </plugin>
