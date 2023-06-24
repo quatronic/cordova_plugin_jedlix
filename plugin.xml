@@ -17,10 +17,11 @@
             </feature>
         </config-file>
         <framework src="src/ios/JedlixSDK.framework" embed="true" custom="true" />
-        <source-file src="src/ios/JedlixPlugin.swift" />
+        <source-file src="src/ios/User.swift" />
         <source-file src="src/ios/Authentication.swift" />
         <source-file src="src/ios/DefaultAuthentication.swift" />
-        <source-file src="src/ios/User.swift" />
+        
+        <source-file src="src/ios/JedlixPlugin.swift" />
     </platform>
 
     <platform name="android">
