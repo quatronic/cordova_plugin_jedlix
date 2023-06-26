@@ -1,7 +1,10 @@
 package com.quatronic.jedlixplugin
 
+import android.content.Intent
+import android.app.Activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.jedlix.sdk.connectSession.ConnectSessionResult
 import com.jedlix.sdk.connectSession.registerConnectSessionManager
 import com.jedlix.sdk.connectSession.ConnectSessionType
 
@@ -16,7 +19,19 @@ class ConnectionActivity : AppCompatActivity() {
         vehicleIdentifier = intent.getStringExtra("vehicleId") ?: ""
         println("--- User " + userIdentifier + " vehicle " + vehicleIdentifier)
         val connectSessionManager = registerConnectSessionManager { result ->
-            // Activity.RESULT_OK Activity.RESULT_CANCELED result.sessionId/ 
+            when (result) {
+                is ConnectSessionResult.Finished -> {
+                    val intent = Intent().also {
+                        it.putExtra("sessionId", result.sessionId)
+                    }
+                    setResult(Activity.RESULT_OK, intent)
+
+                    finish()
+                }
+                is ConnectSessionResult.InProgress -> {println("In progress")}
+                is ConnectSessionResult.NotStarted -> {println("Not started")}
+            }
+
         }
         
         connectSessionManager.startConnectSession(
@@ -24,10 +39,5 @@ class ConnectionActivity : AppCompatActivity() {
             ConnectSessionType.SelectedVehicle(vehicleIdentifier)
         )
 
-
     }
-
-    fun onResume
-
-
 }

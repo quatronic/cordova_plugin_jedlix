@@ -2,6 +2,7 @@ package com.quatronic.jedlixplugin
 
 import android.content.Context
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import org.json.JSONArray
 import java.net.URL
 import org.apache.cordova.CordovaPlugin
@@ -17,7 +18,11 @@ class JedlixPlugin : CordovaPlugin() {
         lateinit var authentication: Authentication
     }
 
+    var callbackContext: CallbackContext? = null
+
     override fun execute(action: String, args: JSONArray, callbackContext: CallbackContext): Boolean {
+        this.callbackContext = callbackContext
+
         if (action == "coolMethod") {
             val userId = args.optString(0, "")
             val accessToken = args.optString(1, "")
@@ -29,7 +34,6 @@ class JedlixPlugin : CordovaPlugin() {
 
             try {
                 authentication = DefaultAuthentication(cordova.getActivity())
-                println("---Somelogline")
                 JedlixSDK.configure(baseURL, null, authentication)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
@@ -40,7 +44,9 @@ class JedlixPlugin : CordovaPlugin() {
                 val intent = Intent(cordova.getContext(), ConnectionActivity::class.java)
                 intent.putExtra("userId", userId)
                 intent.putExtra("vehicleId", vehicleId)
-                cordova.getActivity().startActivity(intent)
+
+                cordova.setActivityResultCallback(this);
+                cordova.getActivity().startActivityForResult(intent, 100)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Error starting the activity: " + e.message)
                 callbackContext.sendPluginResult(result)
@@ -54,6 +60,11 @@ class JedlixPlugin : CordovaPlugin() {
         }
         
         return false
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+        val result = PluginResult(PluginResult.Status.OK, data.getStringExtra("sessionId")?:"")
+        callbackContext?.sendPluginResult(result)
     }
 }
 
