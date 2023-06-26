@@ -7,3 +7,7 @@ exports.coolMethod = function(userid, accesstoken, vehicleid, success, error) {
 exports.chargerMethod = function(userid, accesstoken, charginglocationid, success, error) {
     exec(success, error, 'JedlixPlugin', 'chargerMethod', [userid, accesstoken, charginglocationid]);
 };
+
+exports.testMethod = function(success, error) {
+    exec(success, error, 'JedlixPlugin', 'testMethod');
+}
