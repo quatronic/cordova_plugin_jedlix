@@ -18,6 +18,7 @@
         <source-file src="src/ios/Authentication.swift" />
         <source-file src="src/ios/DefaultAuthentication.swift" />
         <source-file src="src/ios/User.swift" />
+        <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
     </platform>
 
     <platform name="android">
