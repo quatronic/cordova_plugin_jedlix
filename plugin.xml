@@ -32,7 +32,7 @@
             <preference name="GradlePluginKotlinEnabled" value="true" />
             <preference name="GradlePluginVersion" value="8.0.0" />
             <preference name="GradlePluginKotlinCodeStyle" value="official" />
-            <preference name="GradlePluginKotlinVersion" value="1.8.22" />
+            <preference name="GradlePluginKotlinVersion" value="1.8.0" />
 
             <feature name="JedlixPlugin">
                 <param name="android-package" value="com.quatronic.jedlixplugin.JedlixPlugin"/>
