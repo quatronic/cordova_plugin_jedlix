@@ -2,6 +2,11 @@ import SwiftUI
 import JedlixSDK
 
 class JedlixPlugin: CDVPlugin {
+    func testMethod(command: CDVInvokedUrlCommand) {
+        let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "test")
+        self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
+    }
+
     @objc(coolMethod:)
     func coolMethod(command: CDVInvokedUrlCommand) {
         let userid = command.arguments[0] as? String ?? ""
