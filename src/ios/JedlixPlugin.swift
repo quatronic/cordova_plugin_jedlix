@@ -1,7 +1,7 @@
 import SwiftUI
 import JedlixSDK
 
-class JedlixPlugin: CDVPlugin {
+@objc(JedlixPlugin) class JedlixPlugin: CDVPlugin {
     func testMethod(command: CDVInvokedUrlCommand) {
         let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "test")
         self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
