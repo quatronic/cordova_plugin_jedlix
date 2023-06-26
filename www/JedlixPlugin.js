@@ -9,5 +9,7 @@ exports.chargerMethod = function(userid, accesstoken, charginglocationid, succes
 };
 
 exports.testMethod = function(success, error) {
+    alert(typeof(success));
     exec(success, error, 'JedlixPlugin', 'testMethod');
+    alert("Finished testmethod");
 };
