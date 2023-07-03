@@ -9,16 +9,7 @@ import JedlixSDK
         let vehicleid = command.arguments[2] as? String ?? ""
         
         let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
-            let pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR)
-
-            if (result[0] == "finished") {
-                pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAsMultipart: result)
-            }
-
-            else {
-                pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
-            }
-            
+            let pluginResult = result[0] == "finished" ? CDVPluginResult(status: CDVCommandStatus_OK) : CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
             self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
         }
         
