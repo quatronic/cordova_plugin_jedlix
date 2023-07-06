@@ -32,11 +32,10 @@ import JedlixSDK
 
 
 @objc class ConnectView: NSObject {
-    @objc static func createVehicle(userId: String, accessToken: String, vehicleId: String, callback: @escaping ([String]) -> Void) -> UIViewController {
-        let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
-        let apiKey: String? = nil
-        
+    @objc static func createVehicle(apiKey: String, userId: String, accessToken: String, vehicleId: String, callback: @escaping ([String]) -> Void) -> UIViewController {
+        let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!     
         let authentication = DefaultAuthentication()
+
         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
         authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
         
@@ -52,13 +51,14 @@ import JedlixSDK
         )
     }
     
-    @objc static func createCharger(userId: String, accessToken: String, chargingLocationId: String) -> UIViewController {
+    @objc static func createCharger(apiKey: String, userId: String, accessToken: String, chargingLocationId: String) -> UIViewController {
         let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
-        let apiKey: String? = nil
         let authentication = DefaultAuthentication()
         let type = ConnectSessionType.charger(chargingLocationId: chargingLocationId)
+
         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
         authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
+        
         return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, sessionType: type))
     }
 }

@@ -24,9 +24,10 @@ class JedlixPlugin : CordovaPlugin() {
         this.callbackContext = callbackContext
 
         if (action == "coolMethod") {
-            val userId = args.optString(0, "")
-            val accessToken = args.optString(1, "")
-            val vehicleId = args.optString(2, "")
+            val apiKey = args.optString(0, "")
+            val userId = args.optString(1, "")
+            val accessToken = args.optString(2, "")
+            val vehicleId = args.optString(3, "")
 
             var result: PluginResult
 
@@ -34,7 +35,7 @@ class JedlixPlugin : CordovaPlugin() {
 
             try {
                 authentication = DefaultAuthentication(cordova.getActivity())
-                JedlixSDK.configure(baseURL, null, authentication)
+                JedlixSDK.configure(baseURL, apiKey, authentication)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
                 callbackContext.sendPluginResult(result)
