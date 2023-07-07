@@ -4,11 +4,12 @@ import JedlixSDK
 @objc(JedlixPlugin) class JedlixPlugin: CDVPlugin {
     @objc(coolMethod:)
     func coolMethod(command: CDVInvokedUrlCommand) {
-        let userid = command.arguments[0] as? String ?? ""
-        let accesstoken = command.arguments[1] as? String ?? ""
-        let vehicleid = command.arguments[2] as? String ?? ""
+        let apiKey = command.arguments[0] as? String ?? ""
+        let userid = command.arguments[1] as? String ?? ""
+        let accesstoken = command.arguments[2] as? String ?? ""
+        let vehicleid = command.arguments[3] as? String ?? ""
         
-        let vc = ConnectView.createVehicle(userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
+        let vc = ConnectView.createVehicle(apiKey: apiKey, userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
             let pluginResult = result[0] == "finished" ? CDVPluginResult(status: CDVCommandStatus_OK) : CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
             self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
         }
@@ -18,11 +19,12 @@ import JedlixSDK
     
     @objc(chargerMethod:)
     func chargerMethod(command: CDVInvokedUrlCommand) {
-        let userid = command.arguments[0] as? String ?? ""
-        let accesstoken = command.arguments[1] as? String ?? ""
-        let chargingLocationid = command.arguments[2] as? String ?? ""
+        let apiKey = command.arguments[0] as? String ?? ""
+        let userid = command.arguments[1] as? String ?? ""
+        let accesstoken = command.arguments[2] as? String ?? ""
+        let vehicleid = command.arguments[3] as? String ?? ""
         
-        let vc = ConnectView.createCharger(userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid)
+        let vc = ConnectView.createCharger(apiKey: apiKey, userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid)
         UIApplication.shared.rootViewController?.present(vc, animated: true, completion: nil)
         
         let resultcharger = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
@@ -58,7 +60,7 @@ import JedlixSDK
 
         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
         authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
-        
+
         return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, sessionType: type))
     }
 }
