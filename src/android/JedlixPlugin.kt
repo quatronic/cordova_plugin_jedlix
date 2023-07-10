@@ -35,7 +35,7 @@ class JedlixPlugin : CordovaPlugin() {
 
             try {
                 authentication = DefaultAuthentication(cordova.getActivity())
-                authentication?.also { it .setCredential(accessToken, userId) }
+                authentication?.also { it .setCredentials(accessToken, userId) }
                 JedlixSDK.configure(baseURL, apiKey, authentication)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
