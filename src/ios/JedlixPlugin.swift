@@ -24,11 +24,12 @@ import JedlixSDK
         let accesstoken = command.arguments[2] as? String ?? ""
         let chargingLocationid = command.arguments[3] as? String ?? ""
         
-        let vc = ConnectView.createCharger(apiKey: apiKey, userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid)
+        let vc = ConnectView.createCharger(apiKey: apiKey, userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid) { result in
+            let pluginResult = result[0] == "finished" ? CDVPluginResult(status: CDVCommandStatus_OK) : CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
+            self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
+        }
+
         UIApplication.shared.rootViewController?.present(vc, animated: true, completion: nil)
-        
-        let resultcharger = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: "Test")
-        self.commandDelegate.send(resultcharger, callbackId: command.callbackId)
     }
 }
 
@@ -61,7 +62,17 @@ import JedlixSDK
         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
         authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
 
-        return UIHostingController(rootView: ConnectSessionView(userIdentifier: userId, sessionType: type))
+        return UIHostingController(rootView: 
+            ConnectSessionView(userIdentifier: userId, sessionType: type) { result in
+                switch result {
+                case .notStarted: callback(["notStarted"])
+                case .inProgress(let sessionId): callback(["inProgress", sessionId])
+                case .finished(let sessionId): callback(["finished", sessionId])
+                default: break
+                }
+            }
+            
+        )
     }
 }
 
