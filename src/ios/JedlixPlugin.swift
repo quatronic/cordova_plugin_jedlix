@@ -54,7 +54,7 @@ import JedlixSDK
         )
     }
     
-    @objc static func createCharger(apiKey: String, userId: String, accessToken: String, chargingLocationId: String) -> UIViewController {
+    @objc static func createCharger(apiKey: String, userId: String, accessToken: String, chargingLocationId: String, callback: @escaping ([String]) -> Void) -> UIViewController {
         let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
         let authentication = DefaultAuthentication()
         let type = ConnectSessionType.charger(chargingLocationId: chargingLocationId)
