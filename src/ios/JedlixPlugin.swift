@@ -10,7 +10,7 @@ import JedlixSDK
         let vehicleid = command.arguments[3] as? String ?? ""
         
         let vc = ConnectView.createVehicle(apiKey: apiKey, userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
-            let pluginResult = result[0] == "finished" ? CDVPluginResult(status: CDVCommandStatus_OK) : CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
+            let pluginResult = result[0] == "finished" ? CDVPluginResult(status: CDVCommandStatus_OK, messageAsMultipart: result) : CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
             self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
         }
         
@@ -25,7 +25,7 @@ import JedlixSDK
         let chargingLocationid = command.arguments[3] as? String ?? ""
         
         let vc = ConnectView.createCharger(apiKey: apiKey, userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid) { result in
-            let pluginResult = result[0] == "finished" ? CDVPluginResult(status: CDVCommandStatus_OK) : CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
+            let pluginResult = result[0] == "finished" ? CDVPluginResult(status: CDVCommandStatus_OK, messageAsMultipart: result) : CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
             self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
         }
 
