@@ -48,8 +48,8 @@ class JedlixPlugin : CordovaPlugin() {
                 intent.putExtra("userId", userId)
                 intent.putExtra("vehicleId", vehicleId)
 
-                cordova.setActivityResultCallback(this);
-                cordova.getActivity().startActivityForResult(intent, 100)
+                //cordova.setActivityResultCallback(this);
+                this.cordova.startActivityForResult(this, intent, 100)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Error starting the activity: " + e.message)
                 callbackContext.sendPluginResult(result)
