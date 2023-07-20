@@ -4,13 +4,20 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import org.json.JSONArray
+import java.net.URL
 import org.apache.cordova.CordovaPlugin
 import org.apache.cordova.CallbackContext
 import org.apache.cordova.PluginResult
-
+import com.jedlix.sdk.JedlixSDK
 
 
 class JedlixPlugin : CordovaPlugin() {
+    companion object {
+        lateinit var baseURL: URL
+        lateinit var apiKey: String
+        lateinit var authentication: DefaultAuthentication
+    }
+
     var callbackContext: CallbackContext? = null
 
     override fun execute(action: String, args: JSONArray, callbackContext: CallbackContext): Boolean {
@@ -23,21 +30,31 @@ class JedlixPlugin : CordovaPlugin() {
             val vehicleId = args.optString(3, "")
 
             var result: PluginResult
-      
+
+            baseURL = URL("https://qa-nextenergy-smartcharging.jedlix.com")
+
+            try {
+                authentication = DefaultAuthentication(cordova.getActivity())
+                JedlixSDK.configure(baseURL, apiKey, authentication)
+                authentication.setCredentials(accessToken, userId)
+                
+            } catch (e: Exception) {
+                result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
+                callbackContext.sendPluginResult(result)
+            }
+            /*
             try {
                 val intent = Intent(cordova.getContext(), ConnectionActivity::class.java)
                 intent.putExtra("userId", userId)
                 intent.putExtra("vehicleId", vehicleId)
-                intent.putExtra("accessToken", accessToken)
-                intent.putExtra("apiKey", apiKey)
 
-                //cordova.setActivityResultCallback(this);
-                this.cordova.startActivityForResult(this, intent, 100)
+                cordova.setActivityResultCallback(this);
+                cordova.getActivity().startActivityForResult(intent, 100)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Error starting the activity: " + e.message)
                 callbackContext.sendPluginResult(result)
             }
-            
+            */
             //Standard Cordova stuff
             result = PluginResult(PluginResult.Status.NO_RESULT)
             result.setKeepCallback(true)
