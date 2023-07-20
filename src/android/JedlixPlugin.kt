@@ -42,7 +42,7 @@ class JedlixPlugin : CordovaPlugin() {
                 result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
                 callbackContext.sendPluginResult(result)
             }
-            /*
+            
             try {
                 val intent = Intent(cordova.getContext(), ConnectionActivity::class.java)
                 intent.putExtra("userId", userId)
@@ -54,7 +54,7 @@ class JedlixPlugin : CordovaPlugin() {
                 result = PluginResult(PluginResult.Status.ERROR, "Error starting the activity: " + e.message)
                 callbackContext.sendPluginResult(result)
             }
-            */
+            
             //Standard Cordova stuff
             result = PluginResult(PluginResult.Status.NO_RESULT)
             result.setKeepCallback(true)
