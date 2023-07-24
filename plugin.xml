@@ -25,7 +25,7 @@
 
         <source-file src="src/android/Authentication.kt" target-dir="src/main/kotlin" />
         <source-file src="src/android/DefaultAuthentication.kt" target-dir="src/main/kotlin" />
-        <source-file src="src/android/ConnectionActivity.kt" target-dir="src/main/kotlin" />
+        <source-file src="src/android/ConnectSessionActivity.kt" target-dir="src/main/kotlin" />
         <source-file src="src/android/JedlixPlugin.kt" target-dir="src/main/kotlin" />
 
 	    <config-file parent="/*" target="res/xml/config.xml">
@@ -41,7 +41,7 @@
         </config-file>
         
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:name="com.quatronic.jedlixplugin.ConnectionActivity" android:theme="@style/Theme.AppCompat" />
+            <activity android:name="com.quatronic.jedlixplugin.ConnectSessionActivity" android:theme="@style/Theme.AppCompat" />
         </config-file>  
     </platform>
 </plugin>

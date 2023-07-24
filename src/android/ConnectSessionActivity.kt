@@ -8,7 +8,7 @@ import com.jedlix.sdk.connectSession.ConnectSessionResult
 import com.jedlix.sdk.connectSession.registerConnectSessionManager
 import com.jedlix.sdk.connectSession.ConnectSessionType
 
-class ConnectionActivity : AppCompatActivity() {
+class ConnectSessionActivity : AppCompatActivity() {
     private lateinit var userIdentifier: String
     private lateinit var vehicleIdentifier: String
      

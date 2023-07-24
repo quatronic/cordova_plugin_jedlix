@@ -44,7 +44,7 @@ class JedlixPlugin : CordovaPlugin() {
             }
             
             try {
-                val intent = Intent(cordova.getContext(), ConnectionActivity::class.java)
+                val intent = Intent(cordova.getContext(), ConnectSessionActivity::class.java)
                 intent.putExtra("userId", userId)
                 intent.putExtra("vehicleId", vehicleId)
 
