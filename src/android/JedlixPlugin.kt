@@ -24,7 +24,7 @@ class JedlixPlugin : CordovaPlugin() {
         this.callbackContext = callbackContext
 
         if (action == "coolMethod") {
-            val url = args.optString(0, "")
+            val urlString = args.optString(0, "")
             val apiKey = args.optString(1, "")
             val userId = args.optString(2, "")
             val accessToken = args.optString(3, "")
@@ -32,7 +32,7 @@ class JedlixPlugin : CordovaPlugin() {
 
             var result: PluginResult
 
-            baseURL = URL(url)
+            baseURL = URL(urlString)
 
             try {
                 authentication = DefaultAuthentication(cordova.getActivity())
@@ -71,4 +71,3 @@ class JedlixPlugin : CordovaPlugin() {
         callbackContext?.sendPluginResult(result)
     }
 }
-
