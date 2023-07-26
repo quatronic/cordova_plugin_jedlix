@@ -24,14 +24,15 @@ class JedlixPlugin : CordovaPlugin() {
         this.callbackContext = callbackContext
 
         if (action == "coolMethod") {
-            val apiKey = args.optString(0, "")
-            val userId = args.optString(1, "")
-            val accessToken = args.optString(2, "")
-            val vehicleId = args.optString(3, "")
+            val url = args.optString(0, "")
+            val apiKey = args.optString(1, "")
+            val userId = args.optString(2, "")
+            val accessToken = args.optString(3, "")
+            val vehicleId = args.optString(4, "")
 
             var result: PluginResult
 
-            baseURL = URL("https://qa-nextenergy-smartcharging.jedlix.com")
+            baseURL = URL(url)
 
             try {
                 authentication = DefaultAuthentication(cordova.getActivity())
