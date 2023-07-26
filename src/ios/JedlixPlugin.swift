@@ -4,12 +4,13 @@ import JedlixSDK
 @objc(JedlixPlugin) class JedlixPlugin: CDVPlugin {
     @objc(coolMethod:)
     func coolMethod(command: CDVInvokedUrlCommand) {
-        let apiKey = command.arguments[0] as? String ?? ""
-        let userid = command.arguments[1] as? String ?? ""
-        let accesstoken = command.arguments[2] as? String ?? ""
-        let vehicleid = command.arguments[3] as? String ?? ""
+        let url = command.arguments[0] as? String ?? ""
+        let apiKey = command.arguments[1] as? String ?? ""
+        let userid = command.arguments[2] as? String ?? ""
+        let accesstoken = command.arguments[3] as? String ?? ""
+        let vehicleid = command.arguments[4] as? String ?? ""
         
-        let vc = ConnectView.createVehicle(apiKey: apiKey, userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
+        let vc = ConnectView.createVehicle(url: url, apiKey: apiKey, userId: userid, accessToken: accesstoken, vehicleId: vehicleid) { result in
             let pluginResult = result[0] == "finished" ? CDVPluginResult(status: CDVCommandStatus_OK, messageAsMultipart: result) : CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
             self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
         }
@@ -19,12 +20,13 @@ import JedlixSDK
     
     @objc(chargerMethod:)
     func chargerMethod(command: CDVInvokedUrlCommand) {
-        let apiKey = command.arguments[0] as? String ?? ""
-        let userid = command.arguments[1] as? String ?? ""
-        let accesstoken = command.arguments[2] as? String ?? ""
-        let chargingLocationid = command.arguments[3] as? String ?? ""
+        let url = command.arguments[0] as? String ?? ""
+        let apiKey = command.arguments[1] as? String ?? ""
+        let userid = command.arguments[2] as? String ?? ""
+        let accesstoken = command.arguments[3] as? String ?? ""
+        let vehicleid = command.arguments[4] as? String ?? ""
         
-        let vc = ConnectView.createCharger(apiKey: apiKey, userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid) { result in
+        let vc = ConnectView.createCharger(url: url, apiKey: apiKey, userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid) { result in
             let pluginResult = result[0] == "finished" ? CDVPluginResult(status: CDVCommandStatus_OK, messageAsMultipart: result) : CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
             self.commandDelegate.send(pluginResult, callbackId: command.callbackId)
         }
@@ -35,8 +37,8 @@ import JedlixSDK
 
 
 @objc class ConnectView: NSObject {
-    @objc static func createVehicle(apiKey: String, userId: String, accessToken: String, vehicleId: String, callback: @escaping ([String]) -> Void) -> UIViewController {
-        let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!     
+    @objc static func createVehicle(url: String, apiKey: String, userId: String, accessToken: String, vehicleId: String, callback: @escaping ([String]) -> Void) -> UIViewController {
+        let baseURL = URL(string: url)!     
         let authentication = DefaultAuthentication()
 
         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
@@ -54,8 +56,8 @@ import JedlixSDK
         )
     }
     
-    @objc static func createCharger(apiKey: String, userId: String, accessToken: String, chargingLocationId: String, callback: @escaping ([String]) -> Void) -> UIViewController {
-        let baseURL = URL(string: "https://qa-nextenergy-smartcharging.jedlix.com")!
+    @objc static func createCharger(url: String, apiKey: String, userId: String, accessToken: String, chargingLocationId: String, callback: @escaping ([String]) -> Void) -> UIViewController {
+        let baseURL = URL(string: url)!
         let authentication = DefaultAuthentication()
         let type = ConnectSessionType.charger(chargingLocationId: chargingLocationId)
 
