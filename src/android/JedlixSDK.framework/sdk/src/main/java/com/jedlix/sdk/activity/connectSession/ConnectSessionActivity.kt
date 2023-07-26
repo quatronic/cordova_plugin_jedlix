@@ -152,8 +152,8 @@ class ConnectSessionActivity : AppCompatActivity() {
             }
             clearCache(true)
             clearHistory()
-            CookieManager.getInstance().removeAllCookies(null)
-            CookieManager.getInstance().flush()
+            //CookieManager.getInstance().removeAllCookies(null)
+            //CookieManager.getInstance().flush()
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true
             lifecycleScope.launchWhenResumed {
