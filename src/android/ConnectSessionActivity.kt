@@ -18,9 +18,9 @@ class ConnectSessionActivity : AppCompatActivity() {
         userIdentifier = intent.getStringExtra("userId") ?: ""
         vehicleIdentifier = intent.getStringExtra("vehicleId") ?: ""
 
-        val connectSessionManager = registerConnectSessionManager { result ->
+        val connectSessionManager = registerConnectSessionManager { /*result ->
             when (result) {
-                /*
+                
                 is ConnectSessionResult.Finished -> {
                     val intent = Intent().also {
                         it.putExtra("sessionId", result.sessionId)
@@ -31,8 +31,8 @@ class ConnectSessionActivity : AppCompatActivity() {
                 }
                 is ConnectSessionResult.InProgress -> {println("In progress")}
                 is ConnectSessionResult.NotStarted -> {println("Not started")}
-                */
-            }
+                
+            }*/
 
         }
         
