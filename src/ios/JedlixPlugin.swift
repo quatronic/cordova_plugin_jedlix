@@ -24,7 +24,7 @@ import JedlixSDK
         let apiKey = command.arguments[1] as? String ?? ""
         let userid = command.arguments[2] as? String ?? ""
         let accesstoken = command.arguments[3] as? String ?? ""
-        let vehicleid = command.arguments[4] as? String ?? ""
+        let chargingLocationid = command.arguments[4] as? String ?? ""
         
         let vc = ConnectView.createCharger(url: url, apiKey: apiKey, userId: userid, accessToken: accesstoken, chargingLocationId: chargingLocationid) { result in
             let pluginResult = result[0] == "finished" ? CDVPluginResult(status: CDVCommandStatus_OK, messageAsMultipart: result) : CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsMultipart: result)
