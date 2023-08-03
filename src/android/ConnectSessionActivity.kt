@@ -11,7 +11,8 @@ import com.jedlix.sdk.connectSession.ConnectSessionType
 class ConnectSessionActivity : AppCompatActivity() {
     private lateinit var userIdentifier: String
     private lateinit var vehicleIdentifier: String
-     
+    // parameter meegeven voor type connectsession (vehicle vs. charger)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,6 +37,7 @@ class ConnectSessionActivity : AppCompatActivity() {
 
         }
         
+        //if bouwen o.b.v. type connectsession parameter
         connectSessionManager.startConnectSession(
             userIdentifier,
             ConnectSessionType.SelectedVehicle(vehicleIdentifier)

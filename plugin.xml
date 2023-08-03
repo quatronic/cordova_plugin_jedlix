@@ -21,7 +21,8 @@
     </platform>
 
     <platform name="android">
-        <framework src="com.jedlix:sdk:1.6.1" />	
+        <framework src="src/android/jedlixsdk.gradle" custom="true" type="gradleReference" />
+        <lib-file src="src/android/sdk-debug.aar" />
 
         <source-file src="src/android/Authentication.kt" target-dir="src/main/kotlin" />
         <source-file src="src/android/DefaultAuthentication.kt" target-dir="src/main/kotlin" />
