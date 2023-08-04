@@ -8,16 +8,16 @@ import com.jedlix.sdk.connectSession.ConnectSessionResult
 import com.jedlix.sdk.connectSession.registerConnectSessionManager
 import com.jedlix.sdk.connectSession.ConnectSessionType
 
-class ConnectSessionActivity : AppCompatActivity() {
+class ConnectChargerActivity : AppCompatActivity() {
     private lateinit var userIdentifier: String
-    private lateinit var vehicleIdentifier: String
+    private lateinit var chargingLocationId: String
     // parameter meegeven voor type connectsession (vehicle vs. charger)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         userIdentifier = intent.getStringExtra("userId") ?: ""
-        vehicleIdentifier = intent.getStringExtra("vehicleId") ?: ""
+        chargingLocationId = intent.getStringExtra("chargingLocationId") ?: ""
 
         val connectSessionManager = registerConnectSessionManager { result ->
             when (result) {
@@ -40,7 +40,7 @@ class ConnectSessionActivity : AppCompatActivity() {
         //if bouwen o.b.v. type connectsession parameter
         connectSessionManager.startConnectSession(
             userIdentifier,
-            ConnectSessionType.SelectedVehicle(vehicleIdentifier)
+            ConnectSessionType.Charger(chargingLocationId)
         )
 
     }
