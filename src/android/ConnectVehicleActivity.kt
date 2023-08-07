@@ -23,9 +23,7 @@ class ConnectVehicleActivity : AppCompatActivity() {
             when (result) {
                 
                 is ConnectSessionResult.Finished -> {
-                    val intent = Intent().also {
-                        it.putExtra("sessionId", result.sessionId)
-                    }
+                    val intent = Intent()
                     setResult(Activity.RESULT_OK, intent)
 
                     finish()

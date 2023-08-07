@@ -109,7 +109,7 @@ class JedlixPlugin : CordovaPlugin() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        val result = PluginResult(PluginResult.Status.OK, data.getStringExtra("sessionId")?:"")
+        val result = PluginResult(PluginResult.Status.OK, "Session finished")
         callbackContext?.sendPluginResult(result)
     }
 }
