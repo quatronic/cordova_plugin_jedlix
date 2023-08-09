@@ -58,10 +58,6 @@ class JedlixPlugin : CordovaPlugin() {
             }
             
             //Standard Cordova stuff
-            result = PluginResult(PluginResult.Status.NO_RESULT)
-            result.setKeepCallback(true)
-            callbackContext.sendPluginResult(result)
-            return true
         }
 
         //Connect charger
