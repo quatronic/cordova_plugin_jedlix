@@ -42,6 +42,7 @@ class JedlixPlugin : CordovaPlugin() {
                 
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
+                println("remco line 45")
                 callbackContext.sendPluginResult(result)
             }
             
@@ -54,6 +55,7 @@ class JedlixPlugin : CordovaPlugin() {
                 cordova.getActivity().startActivityForResult(intent, 100)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Error starting the activity: " + e.message)
+                println("remco line 58")
                 callbackContext.sendPluginResult(result)
             }
             
