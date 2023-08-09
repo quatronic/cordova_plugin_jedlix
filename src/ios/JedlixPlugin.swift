@@ -46,7 +46,7 @@ import JedlixSDK
         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
         authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
         
-        if (openSessionId = "") {
+        if (openSessionId == "") {
             return UIHostingController(rootView:
                 ConnectSessionView(userIdentifier: userId, vehicleIdentifier: vehicleId) { result in
                     switch result {
@@ -80,7 +80,7 @@ import JedlixSDK
         JedlixSDK.configure(baseURL: baseURL, apiKey: apiKey, authentication: authentication)
         authentication.authenticate(accessToken: accessToken, userIdentifier: userId)
 
-        if (openSessionId = "") {
+        if (openSessionId == "") {
             return UIHostingController(rootView: 
                 ConnectSessionView(userIdentifier: userId, sessionType: type) { result in
                     switch result {
