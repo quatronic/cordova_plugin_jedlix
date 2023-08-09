@@ -38,12 +38,14 @@ class JedlixPlugin : CordovaPlugin() {
 
             try {
                 authentication = DefaultAuthentication(cordova.getActivity())
-                JedlixSDK.configure(baseURL, apiKey, authentication)
-                authentication.setCredentials(accessToken, userId)
                 
+                if (!authentication.isAuthenticated) {
+                    JedlixSDK.configure(baseURL, apiKey, authentication)
+                    authentication.setCredentials(accessToken, userId)
+                }                
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
-                println("remco line 45")
+                println("remco line 45 " + e.message)
                 callbackContext.sendPluginResult(result)
             }
             
@@ -57,7 +59,7 @@ class JedlixPlugin : CordovaPlugin() {
                 cordova.getActivity().startActivityForResult(intent, 100)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Error starting the activity: " + e.message)
-                println("remco line 58")
+                println("remco line 58 " + e.message)
                 callbackContext.sendPluginResult(result)
             }
             
@@ -83,8 +85,11 @@ class JedlixPlugin : CordovaPlugin() {
 
             try {
                 authentication = DefaultAuthentication(cordova.getActivity())
-                JedlixSDK.configure(baseURL, apiKey, authentication)
-                authentication.setCredentials(accessToken, userId)
+                
+                if (!authentication.isAuthenticated) {
+                    JedlixSDK.configure(baseURL, apiKey, authentication)
+                    authentication.setCredentials(accessToken, userId)
+                }
                 
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
