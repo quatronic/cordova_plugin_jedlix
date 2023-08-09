@@ -15,9 +15,11 @@ class JedlixPlugin : CordovaPlugin() {
     companion object {
         lateinit var baseURL: URL
         lateinit var apiKey: String
+        lateinit var authentication: DefaultAuthentication
     }
 
     var callbackContext: CallbackContext? = null
+    var isInitialized: Boolean = false
 
     override fun execute(action: String, args: JSONArray, callbackContext: CallbackContext): Boolean {
         this.callbackContext = callbackContext
@@ -32,19 +34,21 @@ class JedlixPlugin : CordovaPlugin() {
             val openSessionId = args.optString(5, "")
 
             var result: PluginResult
-            var authentication: DefaultAuthentication
-
+            
             baseURL = URL(urlString)
 
-            try {
-                authentication = DefaultAuthentication(cordova.getActivity())
-                JedlixSDK.configure(baseURL, apiKey, authentication)
-                authentication.setCredentials(accessToken, userId)
+            if(!isInitialized) {
+                try {
+                    authentication = DefaultAuthentication(cordova.getActivity())
+                    JedlixSDK.configure(baseURL, apiKey, authentication)
+                    authentication.setCredentials(accessToken, userId)
 
-            } catch (e: Exception) {
-                result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
-                println("--- " + e.message)
-                callbackContext.sendPluginResult(result)
+                    isInitialized = true
+                } catch (e: Exception) {
+                    result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
+                    println("--- " + e.message)
+                    callbackContext.sendPluginResult(result)
+                }
             }
             
             try {
@@ -78,21 +82,23 @@ class JedlixPlugin : CordovaPlugin() {
             val openSessionId = args.optString(5, "")
 
             var result: PluginResult
-            var authentication: DefaultAuthentication
 
             baseURL = URL(urlString)
 
-            try {
-                authentication = DefaultAuthentication(cordova.getActivity())
-                JedlixSDK.configure(baseURL, apiKey, authentication)
-                authentication.setCredentials(accessToken, userId)
-                
-            } catch (e: Exception) {
-                result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
-                println("--- " + e.message)
-                callbackContext.sendPluginResult(result)
+            if(!isInitialized) {
+                try {
+                    authentication = DefaultAuthentication(cordova.getActivity())
+                    JedlixSDK.configure(baseURL, apiKey, authentication)
+                    authentication.setCredentials(accessToken, userId)
+                    
+                    isInitialized = true
+                } catch (e: Exception) {
+                    result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
+                    println("--- " + e.message)
+                    callbackContext.sendPluginResult(result)
+                }
             }
-            
+                
             try {
                 val intent = Intent(cordova.getContext(), ConnectChargerActivity::class.java)
                 intent.putExtra("userId", userId)
