@@ -36,14 +36,14 @@ class ConnectVehicleActivity : AppCompatActivity() {
 
         }
         
-        if(openSessionId=="") {
+        if(sessionIdentifier == "") {
             connectSessionManager.startConnectSession(
                 userIdentifier,
                 ConnectSessionType.SelectedVehicle(vehicleIdentifier)
             )
         }
         else {
-            connectSessionManager.startConnectSession(
+            connectSessionManager.resumeConnectSession(
                 userIdentifier,
                 sessionIdentifier
             )

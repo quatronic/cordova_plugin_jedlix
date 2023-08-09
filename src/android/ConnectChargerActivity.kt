@@ -36,14 +36,14 @@ class ConnectChargerActivity : AppCompatActivity() {
 
         }
         
-        if(openSessionId=="") {
+        if(sessionIdentifier == "") {
             connectSessionManager.startConnectSession(
                 userIdentifier,
                 ConnectSessionType.Charger(chargingLocationId)
             )
         }
         else {
-            connectSessionManager.startConnectSession(
+            connectSessionManager.resumeConnectSession(
                 userIdentifier,
                 sessionIdentifier
             )
