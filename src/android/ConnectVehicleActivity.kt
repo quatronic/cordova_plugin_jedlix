@@ -11,7 +11,7 @@ import com.jedlix.sdk.connectSession.ConnectSessionType
 class ConnectVehicleActivity : AppCompatActivity() {
     private lateinit var userIdentifier: String
     private lateinit var vehicleIdentifier: String
-    private lateinit var openSessionId: String
+    private lateinit var sessionIdentifier: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
