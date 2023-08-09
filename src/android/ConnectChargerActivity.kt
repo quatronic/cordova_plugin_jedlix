@@ -11,13 +11,14 @@ import com.jedlix.sdk.connectSession.ConnectSessionType
 class ConnectChargerActivity : AppCompatActivity() {
     private lateinit var userIdentifier: String
     private lateinit var chargingLocationId: String
-    // parameter meegeven voor type connectsession (vehicle vs. charger)
+    private lateinit var openSessionId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         userIdentifier = intent.getStringExtra("userId") ?: ""
         chargingLocationId = intent.getStringExtra("chargingLocationId") ?: ""
+        sessionIdentifier = intent.getStringExtra("openSessionId") ?: ""
 
         val connectSessionManager = registerConnectSessionManager { result ->
             when (result) {
@@ -35,11 +36,18 @@ class ConnectChargerActivity : AppCompatActivity() {
 
         }
         
-        //if bouwen o.b.v. type connectsession parameter
-        connectSessionManager.startConnectSession(
-            userIdentifier,
-            ConnectSessionType.Charger(chargingLocationId)
-        )
+        if(openSessionId=="") {
+            connectSessionManager.startConnectSession(
+                userIdentifier,
+                ConnectSessionType.Charger(chargingLocationId)
+            )
+        }
+        else {
+            connectSessionManager.startConnectSession(
+                userIdentifier,
+                sessionIdentifier
+            )
+        }
 
     }
 }

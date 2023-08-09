@@ -30,6 +30,7 @@ class JedlixPlugin : CordovaPlugin() {
             val userId = args.optString(2, "")
             val accessToken = args.optString(3, "")
             val vehicleId = args.optString(4, "")
+            val openSessionId = args.optString(5, "")
 
             var result: PluginResult
 
@@ -42,6 +43,7 @@ class JedlixPlugin : CordovaPlugin() {
                 
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Authentication error " + e.message)
+                println("remco line 45")
                 callbackContext.sendPluginResult(result)
             }
             
@@ -49,11 +51,13 @@ class JedlixPlugin : CordovaPlugin() {
                 val intent = Intent(cordova.getContext(), ConnectVehicleActivity::class.java)
                 intent.putExtra("userId", userId)
                 intent.putExtra("vehicleId", vehicleId)
+                intent.putExtra("openSessionId", openSessionId)
 
                 cordova.setActivityResultCallback(this);
                 cordova.getActivity().startActivityForResult(intent, 100)
             } catch (e: Exception) {
                 result = PluginResult(PluginResult.Status.ERROR, "Error starting the activity: " + e.message)
+                println("remco line 58")
                 callbackContext.sendPluginResult(result)
             }
             
@@ -65,12 +69,13 @@ class JedlixPlugin : CordovaPlugin() {
         }
 
         //Connect charger
-                if (action == "chargerMethod") {
+        if (action == "chargerMethod") {
             val urlString = args.optString(0, "")
             val apiKey = args.optString(1, "")
             val userId = args.optString(2, "")
             val accessToken = args.optString(3, "")
             val chargingLocationId = args.optString(4, "")
+            val openSessionId = args.optString(5, "")
 
             var result: PluginResult
 
@@ -90,6 +95,7 @@ class JedlixPlugin : CordovaPlugin() {
                 val intent = Intent(cordova.getContext(), ConnectChargerActivity::class.java)
                 intent.putExtra("userId", userId)
                 intent.putExtra("chargingLocationId", chargingLocationId)
+                intent.putExtra("openSessionId", openSessionId)
 
                 cordova.setActivityResultCallback(this);
                 cordova.getActivity().startActivityForResult(intent, 100)
